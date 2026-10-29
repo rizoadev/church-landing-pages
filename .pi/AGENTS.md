@@ -138,7 +138,7 @@ Berikut ide skill yang bisa dibuat sesuai kebutuhan project:
 
 | # | Workflow File | Nama | Skills Used |
 |---|--------------|------|-------------|
-| — | — | — | — |
+| 1 | `workflows/themeforest-lp-adaptation.md` | ThemeForest LP Adaptation | sub-agent-frontend, sub-agent-tester, sub-agent-devops, auto-documentation |
 
 <!-- Contoh workflow:
 | 1 | `workflows/full-deploy.md` | Full Deploy | env-validator → test-runner → docker-manager → deploy-checker |

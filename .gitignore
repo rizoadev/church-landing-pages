@@ -1,4 +1,6 @@
 .wrangler/
+.agent_context/
+AGENTS.md
 .DS_Store
 Thumbs.db
 *.tmp
