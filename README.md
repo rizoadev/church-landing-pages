@@ -8,6 +8,8 @@ Built with **pure HTML5 + Tailwind CSS (via CDN) + Font Awesome 6 + Vanilla JS**
 
 ## 🏛️ Included Landing Pages
 
+Buka `index.html` di root untuk melihat **Showcase Gallery interaktif** dengan live quick view, filter kategori, dan screenshot dari semua 13 template:
+
 | # | Folder | Theme / Designation | Highlights |
 |---|---|---|---|
 | **01** | `01-events-home-chapel/` | Events Home – Chapel | Warm sand aesthetic, calendar announcements, interactive donation split, testimonials, blog feed with vertical date badges. |

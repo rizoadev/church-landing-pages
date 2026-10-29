@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Church & Religion Landing Pages — Showcase Gallery</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛪</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans, DM Serif Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#c5a059',
+              goldHover: '#b38e47',
+              dark: '#0f1418',
+              surface: '#181f25',
+              border: '#26313b',
+              accent: '#25D366',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b0f12;
+      color: #e2e8f0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .glass-nav {
+      background: rgba(15, 20, 24, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .card-glow:hover {
+      box-shadow: 0 20px 40px -15px rgba(197, 160, 89, 0.2), 0 0 0 1px rgba(197, 160, 89, 0.3);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#c5a059] selection:text-[#0b0f12] min-h-screen flex flex-col justify-between">
+
+  <!-- ================= TOP HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 border-b border-[#26313b] glass-nav transition-all">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#c5a059] to-[#f4d28d] flex items-center justify-center text-[#0b0f12] shadow-md group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-church text-lg"></i>
+        </div>
+        <div>
+          <span class="font-bold text-lg text-white tracking-wide block leading-none">ChurchTheme</span>
+          <span class="text-[10px] text-[#c5a059] uppercase tracking-widest font-semibold">13 Collection Showcase</span>
+        </div>
+      </a>
+
+      <!-- WhatsApp CTA Header -->
+      <div class="flex items-center space-x-4">
+        <a href="https://wa.me/6287881272246?text=Halo%20saya%20tertarik%20membeli%20full%20version%20landing%20page%20template%20ini." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-5 py-2.5 rounded-full transition shadow-lg shadow-[#25D366]/20">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Hubungi WhatsApp (+62 878-8127-2246)</span>
+        </a>
+        <a href="https://github.com/rizoadev/church-landing-pages" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 transition" title="View Source on GitHub">
+          <i class="fa-brands fa-github text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-20 pb-16 px-6 overflow-hidden">
+    <!-- Ambient glow orbs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#c5a059]/10 blur-[120px] pointer-events-none rounded-full"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center space-x-2 bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+        <span>⭐ Premium HTML5 & Tailwind CSS Templates</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] mb-6">
+        Koleksi 13 Template Landing Page Gereja & Faith-Based
+      </h1>
+
+      <p class="text-stone-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+        Koleksi landing page modern, berlisensi royalty-free, 100% responsif mobile-first, dilengkapi burger drawer, modal baca artikel lengkap, modal donasi interaktif, dan video player.
+      </p>
+
+      <!-- Category Filter Tabs & Search -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
+        <!-- Search bar -->
+        <div class="relative w-full sm:w-72">
+          <input type="text" id="searchInput" oninput="filterCards()" placeholder="Cari nama template..." class="w-full bg-[#181f25] border border-[#26313b] text-xs text-white placeholder-stone-500 rounded-full py-3 pl-10 pr-4 outline-none focus:border-[#c5a059] transition">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-stone-500 text-xs"></i>
+        </div>
+
+        <!-- Filter Select for Mobile / Pills for Desktop -->
+        <div class="flex flex-wrap justify-center gap-2" id="filterTabs">
+          <button onclick="setFilter('all', this)" class="filter-btn active bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2.5 rounded-full transition">Semua (13)</button>
+          <button onclick="setFilter('chapel', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Chapel</button>
+          <button onclick="setFilter('traditional', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Tradisional</button>
+          <button onclick="setFilter('festival', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Festival & Modern</button>
+          <button onclick="setFilter('accessible', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Inklusif & Aksi</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEMPLATES GALLERY GRID ================= -->
+  <main class="max-w-7xl mx-auto px-6 pb-28 relative z-10">
+    <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 01 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="chapel" data-title="01 events home chapel">
+        <div>
+          <!-- Thumbnail Browser Mockup -->
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/01-events-home-chapel.jpg" alt="01 Events Home Chapel" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#01 CHAPEL</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('01-events-home-chapel', 'Events Home – Chapel')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="01-events-home-chapel/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+
+          <!-- Content Info -->
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span>Events & Sanctuary Portal</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Events Home – Chapel</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Nuansa warm sand & brown dengan slider acara, donasi split layout, kutipan pastor, dan kartu berita dengan badge tanggal vertikal.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Slider Interaktif</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Modal Donasi</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Video Modal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="01-events-home-chapel/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('01 Events Home – Chapel')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="chapel" data-title="02 chapel church theme main home">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/02-chapel-church-theme.jpg" alt="02 Chapel Main Home" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#02 CHAPEL</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('02-chapel-church-theme', 'Chapel Sanctuary & Weddings')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="02-chapel-church-theme/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-ring"></i>
+              <span>Sanctuary & Wedding Ministry</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Chapel Sanctuary & Weddings</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Website komprehensif gereja bersejarah, showcase tur kapel, reservasi pernikahan suci, staf pastoral, dan banner mobile app.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Direktori Pastor</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Video Player</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">22 Asset Foto</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="02-chapel-church-theme/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('02 Chapel Sanctuary & Weddings')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="traditional" data-title="03 nazareth church religion">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/03-nazareth-church-religion-wordpress-theme.jpg" alt="03 Nazareth Church" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#03 NAZARETH</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('03-nazareth-church-religion-wordpress-theme', 'The Nazareth Church')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="03-nazareth-church-religion-wordpress-theme/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-headphones"></i>
+              <span>Terracotta & Sermon Podcasts</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">The Nazareth Church</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Tipografi serif klasik dengan tone terracotta hangat, audio player khotbah interaktif, dan kalender acara sarapan & retreat.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Audio Player</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Acara Komunitas</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Terracotta Tone</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="03-nazareth-church-religion-wordpress-theme/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('03 The Nazareth Church')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="traditional" data-title="04 lutheran church liturgical">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/04-lutheran.jpg" alt="04 Lutheran Church" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#04 LUTHERAN</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('04-lutheran', 'Lutheran Liturgical Church')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="04-lutheran/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-book-bible"></i>
+              <span>Deep Burgundy & Liturgical Core</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Lutheran Church</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Restore, Encourage, Rejoice. Desain warna burgundy mewah dengan 4 pilar pelayanan, video live stream altar, dan penggalangan dana.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Fundraising Cards</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Livestream Video</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">20 Asset Foto</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="04-lutheran/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('04 Lutheran Church')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 05 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="traditional" data-title="05 baptist church community">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/05-baptist.jpg" alt="05 Baptist Church" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#05 BAPTIST</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('05-baptist', 'Baptist Community Church')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="05-baptist/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-cross"></i>
+              <span>Ochre Gold & Welcoming Community</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Baptist Church</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Helping people find and follow Jesus. Split-layout unik dengan kalender acara, kartu purpose life groups, dan arsip khotbah.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Split Layout</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Life Groups Card</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Online Giving</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="05-baptist/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('05 Baptist Church')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 06 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="traditional" data-title="06 orthodox church cathedral">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/06-orthodox.jpg" alt="06 Orthodox Church" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#06 ORTHODOX</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('06-orthodox', 'Christian Orthodox Cathedral')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="06-orthodox/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-monument"></i>
+              <span>Byzantine Gold & Sacred Liturgy</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Christian Orthodox Church</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Kubah fresco Bizantium megah, jadwal Orthros & Divine Liturgy, 3 ubin interaktif (Liturgy, Candle, Tour), dan siaran langsung.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Interactive Tiles</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Live Stream Modal</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Stewardship Form</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="06-orthodox/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('06 Christian Orthodox Church')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 07 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="accessible" data-title="07 churche religion charity social activism">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/07-churche-religion-church-charity-social-activism-wordpress-theme.jpg" alt="07 CHURCHE" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#07 CHURCHE</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('07-churche-religion-church-charity-social-activism-wordpress-theme', 'CHURCHE – Social Activism')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="07-churche-religion-church-charity-social-activism-wordpress-theme/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+              <span>Brutalist Style & Civic Action</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">CHURCHE – Social Activism</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Gaya desain Swiss brutalist tegas dengan font display all-caps, penghitung statistik pelayanan, dan inisiatif aksi sosial kemasyarakatan.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Bold Typography</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Stat Counter</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Outreach Volunteer</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="07-churche-religion-church-charity-social-activism-wordpress-theme/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('07 CHURCHE – Social Activism')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 08 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="accessible" data-title="08 deborah inclusive church">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/08-deborah-inclusive-church.jpg" alt="08 Deborah Church" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#08 DEBORAH</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('08-deborah-inclusive-church', 'Deborah Barrierless Church')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="08-deborah-inclusive-church/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-universal-access"></i>
+              <span>Barrierless & Neuro-Inclusive</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Deborah Barrierless Church</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Konsep gereja inklusif tanpa hambatan fisik dan sensorik dengan aksen pastel yellow cerah, wave dividers, dan profil pastor.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Accessibility First</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Pastel Yellow Accent</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Wave Layout</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="08-deborah-inclusive-church/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('08 Deborah Barrierless Church')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 09 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="festival" data-title="09 churx christmas night glow">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/09-churx.jpg" alt="09 CHURX Christmas" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#09 CHURX</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('09-churx', 'CHURX – Christmas Night Glow')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="09-churx/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-sparkles"></i>
+              <span>Christmas Festival & Night Glow</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">CHURX – Christmas Glow</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Forest green gelap dengan aksen chartreuse lime, frame foto oval elegan, countdown timer festival, dan sistem reservasi tiket.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Countdown Timer</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Oval Hero Frame</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Tiket RSVP</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="09-churx/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('09 CHURX – Christmas Glow')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="festival" data-title="10 churx church festival edition">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/10-churx.jpg" alt="10 CHURX Festival" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#10 CHURX</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('10-churx', 'CHURX – Church Festival Edition')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="10-churx/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-users"></i>
+              <span>Church Festival & Conferences</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">CHURX – Festival Edition</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Konferensi perayaan gereja besar, 3 kartu khotbah berbentuk oval border lime, dan form konfirmasi kehadiran RSVP.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Konferensi 2026</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">3 Oval Sermons</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">RSVP Form</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="10-churx/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('10 CHURX – Festival Edition')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="festival" data-title="11 churx 15 off pass edition">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/11-churx.jpg" alt="11 CHURX 15% Off" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#11 CHURX</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('11-churx', 'CHURX – 15% Off Pass Edition')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="11-churx/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-tag"></i>
+              <span>Festive Crimson Red & Early Pass</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">CHURX – 15% Off Pass</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Hero bernuansa merah Natal dengan form klaim kupon diskon tiket 15% terintegrasi langsung di bagian banner utama.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Crimson Red Palette</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Kupon Diskon</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Form Subscribe</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="11-churx/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('11 CHURX – 15% Off Pass')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="chapel" data-title="12 churx worship word community">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/12-churx.jpg" alt="12 CHURX Worship" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#12 CHURX</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('12-churx', 'CHURX – Worship · Word · Community')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="12-churx/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-hands-praying"></i>
+              <span>Candlelit Devotion & Sunday Service</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">CHURX – Worship & Word</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Pemandangan salib kayu dengan cahaya lilin syahdu di altar, fokus pada pelayanan sabda, khotbah, dan reservasi kursi ibadah minggu.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Candlelit Hero</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Reservasi Kursi</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Khotbah Sabda</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="12-churx/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('12 CHURX – Worship & Word')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 13 -->
+      <div class="template-card bg-[#181f25] border border-[#26313b] rounded-2xl overflow-hidden card-glow transition-all duration-300 flex flex-col justify-between" data-category="accessible" data-title="13 churx church charity donation">
+        <div>
+          <div class="relative overflow-hidden group bg-stone-900 border-b border-[#26313b]">
+            <img src="screenshots/13-churx.jpg" alt="13 CHURX Charity" class="w-full h-56 object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-[#0f1418]/90 backdrop-blur-md text-[#c5a059] text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider border border-[#c5a059]/30">#13 CHURX</span>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-3">
+              <button onclick="openLivePreview('13-churx', 'CHURX – Church & Charity Donation')" class="bg-white text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-stone-100 transition">
+                <i class="fa-solid fa-eye mr-1.5"></i> Quick View
+              </button>
+              <a href="13-churx/index.html" target="_blank" class="bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2 rounded-full shadow hover:bg-[#b38e47] transition">
+                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Buka Tab Baru
+              </a>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-2 text-[11px] font-semibold text-[#c5a059] uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-heart"></i>
+              <span>Charity Relief & Instant Giving</span>
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">CHURX – Church & Charity</h3>
+            <p class="text-xs text-stone-400 leading-relaxed mb-4">
+              Kalkulator donasi instan di hero banner ($5, $10, $15, $20, custom) dengan opsi metode pembayaran, fokus pada misi kemanusiaan.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-6 text-[10px] font-semibold text-stone-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Kalkulator Donasi</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Payment Method</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Charity Mission</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 flex items-center justify-between border-t border-[#26313b] mt-auto">
+          <a href="13-churx/index.html" target="_blank" class="text-xs font-bold text-white hover:text-[#c5a059] transition flex items-center">
+            <span>Buka Landing Page</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-1.5"></i>
+          </a>
+          <button onclick="orderViaWa('13 CHURX – Church & Charity')" class="text-xs font-bold text-[#25D366] hover:underline flex items-center">
+            <i class="fa-brands fa-whatsapp text-sm mr-1"></i> Beli Full
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= BOTTOM CONTACT / PURCHASE BANNER ================= -->
+  <section class="w-full bg-[#181f25] border-t border-[#26313b] py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="text-xs font-bold text-[#c5a059] uppercase tracking-widest block mb-2">Siap Meluncurkan Website Gereja Anda?</span>
+      <h2 class="font-serif text-3xl sm:text-4xl text-white mb-4">Dapatkan Full Source Code & Lisensi</h2>
+      <p class="text-xs sm:text-sm text-stone-400 max-w-xl mx-auto leading-relaxed mb-8">
+        Setiap template siap pakai tanpa instalasi rumit. Hubungi kami untuk mendapatkan versi lengkap tanpa proteksi paywall dan bantuan setup.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/6287881272246?text=Halo%20saya%20tertarik%20membeli%20koleksi%20template%20landing%20page%20ini." target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-8 py-3.5 rounded-full transition shadow-lg flex items-center space-x-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Hubungi via WhatsApp (+62 878-8127-2246)</span>
+        </a>
+        <button onclick="copyWaNumber()" class="bg-[#26313b] hover:bg-stone-700 text-stone-200 text-xs font-bold px-6 py-3.5 rounded-full transition flex items-center space-x-2">
+          <i class="fa-regular fa-copy"></i>
+          <span id="copyBtnText">Salin Nomor</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="w-full bg-[#0b0f12] text-stone-500 py-8 px-6 text-xs text-center border-t border-[#181f25]">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 Church & Religion Landing Pages Showcase. Pure HTML5 + Tailwind CSS CDN.
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/rizoadev/church-landing-pages" target="_blank" class="hover:text-white transition">GitHub Repo</a>
+        <span>·</span>
+        <a href="https://wa.me/6287881272246" target="_blank" class="hover:text-white transition">WhatsApp Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= LIVE PREVIEW MODAL ================= -->
+  <div id="previewModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex flex-col opacity-0 pointer-events-none transition-all duration-300">
+    <!-- Top toolbar -->
+    <div class="h-16 bg-[#181f25] border-b border-[#26313b] px-6 flex items-center justify-between flex-shrink-0">
+      <div class="flex items-center space-x-3">
+        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+        <span id="modalPreviewTitle" class="text-xs font-bold text-white ml-2">Preview</span>
+      </div>
+
+      <!-- Viewport switchers -->
+      <div class="hidden sm:flex items-center space-x-1 bg-[#0b0f12] p-1 rounded-lg border border-[#26313b]">
+        <button onclick="setPreviewViewport('desktop')" id="vpDesktop" class="px-3 py-1 text-xs font-semibold rounded bg-[#c5a059] text-[#0b0f12] transition" title="Desktop View">
+          <i class="fa-solid fa-desktop mr-1"></i> Desktop
+        </button>
+        <button onclick="setPreviewViewport('tablet')" id="vpTablet" class="px-3 py-1 text-xs font-semibold rounded text-stone-400 hover:text-white transition" title="Tablet View">
+          <i class="fa-solid fa-tablet-screen-button mr-1"></i> Tablet
+        </button>
+        <button onclick="setPreviewViewport('mobile')" id="vpMobile" class="px-3 py-1 text-xs font-semibold rounded text-stone-400 hover:text-white transition" title="Mobile View">
+          <i class="fa-solid fa-mobile-screen-button mr-1"></i> Mobile
+        </button>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center space-x-3">
+        <a id="modalExternalLink" href="#" target="_blank" class="text-xs text-stone-300 hover:text-[#c5a059] transition flex items-center space-x-1" title="Buka di tab terpisah">
+          <span class="hidden md:inline">Tab Baru</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <button onclick="closeLivePreview()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition" aria-label="Close preview">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Iframe container -->
+    <div class="flex-grow flex items-center justify-center p-2 sm:p-4 overflow-hidden">
+      <div id="previewFrameWrapper" class="w-full h-full transition-all duration-300 rounded-xl overflow-hidden shadow-2xl bg-white">
+        <iframe id="previewIframe" src="" class="w-full h-full border-0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/6287881272246?text=Halo%20saya%20tertarik%20membeli%20full%20version%20landing%20page%20template%20ini." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition hover:scale-110 shadow-[#25D366]/40" title="Chat di WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ================= TOAST ================= -->
+  <div id="galleryToast" class="fixed bottom-6 left-6 bg-[#181f25] border border-[#26313b] text-white text-xs font-semibold px-5 py-3 rounded-xl shadow-2xl z-50 transform -translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center space-x-2">
+    <i class="fa-solid fa-circle-check text-[#25D366]"></i>
+    <span id="galleryToastMsg">Nomor disalin ke clipboard</span>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    function setFilter(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.className = 'filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition';
+      });
+      btn.className = 'filter-btn active bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2.5 rounded-full transition';
+
+      const cards = document.querySelectorAll('.template-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function filterCards() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.template-card');
+      cards.forEach(card => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        if (title.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Live Preview Modal
+    const previewModal = document.getElementById('previewModal');
+    const previewIframe = document.getElementById('previewIframe');
+    const modalPreviewTitle = document.getElementById('modalPreviewTitle');
+    const modalExternalLink = document.getElementById('modalExternalLink');
+    const previewFrameWrapper = document.getElementById('previewFrameWrapper');
+
+    function openLivePreview(folder, title) {
+      const url = `${folder}/index.html`;
+      previewIframe.src = url;
+      modalPreviewTitle.textContent = title;
+      modalExternalLink.href = url;
+      setPreviewViewport('desktop');
+
+      previewModal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLivePreview() {
+      previewIframe.src = "";
+      previewModal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+
+    function setPreviewViewport(mode) {
+      const btnD = document.getElementById('vpDesktop');
+      const btnT = document.getElementById('vpTablet');
+      const btnM = document.getElementById('vpMobile');
+
+      [btnD, btnT, btnM].forEach(b => {
+        b.className = 'px-3 py-1 text-xs font-semibold rounded text-stone-400 hover:text-white transition';
+      });
+
+      if (mode === 'desktop') {
+        previewFrameWrapper.style.maxWidth = '100%';
+        previewFrameWrapper.style.height = '100%';
+        btnD.className = 'px-3 py-1 text-xs font-semibold rounded bg-[#c5a059] text-[#0b0f12] transition';
+      } else if (mode === 'tablet') {
+        previewFrameWrapper.style.maxWidth = '768px';
+        previewFrameWrapper.style.height = '95%';
+        btnT.className = 'px-3 py-1 text-xs font-semibold rounded bg-[#c5a059] text-[#0b0f12] transition';
+      } else if (mode === 'mobile') {
+        previewFrameWrapper.style.maxWidth = '390px';
+        previewFrameWrapper.style.height = '844px';
+        btnM.className = 'px-3 py-1 text-xs font-semibold rounded bg-[#c5a059] text-[#0b0f12] transition';
+      }
+    }
+
+    function orderViaWa(templateName) {
+      const msg = encodeURIComponent(`Halo, saya tertarik membeli full version dari "${templateName}". Mohon info lisensi & harganya.`);
+      window.open(`https://wa.me/6287881272246?text=${msg}`, '_blank');
+    }
+
+    function copyWaNumber() {
+      navigator.clipboard.writeText('+62 878-8127-2246').then(() => {
+        const toast = document.getElementById('galleryToast');
+        toast.classList.remove('-translate-y-20', 'opacity-0');
+        setTimeout(() => toast.classList.add('-translate-y-20', 'opacity-0'), 3000);
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLivePreview();
+      }
+    });
+  </script>
+
+</body>
+</html>
