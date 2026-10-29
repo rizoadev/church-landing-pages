@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Orthodox Church – Everyone is welcome</title>
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            orthodox: {
+              slate: '#4f616d',
+              slateDark: '#394751',
+              gold: '#c5a059',
+              goldDark: '#ad8741',
+              cream: '#f8f6f0',
+              charcoal: '#1a2024',
+              text: '#616a70',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #616a70;
+      background-color: #f8f6f0;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#4f616d] selection:text-white">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="w-full bg-[#4f616d] text-white text-[11px] py-2 px-6">
+    <div class="max-w-[1360px] mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3 text-white/80">
+        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+        <button id="searchBtn" class="hover:text-white transition ml-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="font-serif text-lg tracking-widest text-white uppercase font-bold">
+        CHRISTIAN
+      </div>
+
+      <div>
+        <button onclick="openDonateModal()" class="bg-white/20 hover:bg-white hover:text-[#4f616d] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 transition">
+          GIVE!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative w-full min-h-[640px] lg:min-h-[760px] bg-cover bg-center overflow-hidden flex items-center justify-center text-center" style="background-image: url('images/hero-dome.jpg');">
+    <div class="absolute inset-0 bg-[#1a2024]/65 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-white relative z-10 py-24">
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-[68px] font-normal leading-[1.1] tracking-tight mb-6">
+        Everyone is welcome at Christian<br>Orthodox Church!
+      </h1>
+      <p class="font-serif italic text-lg sm:text-2xl text-[#c5a059] tracking-wide">
+        The Orthodox Christian Church
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= WELCOME & SUNDAY SERVICES ================= -->
+  <section class="w-full bg-[#f8f6f0] py-20 lg:py-28">
+    <div class="max-w-[1240px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <!-- Left Statement -->
+        <div class="md:col-span-7">
+          <h2 class="font-serif text-2xl sm:text-3xl lg:text-[34px] leading-snug text-[#1a2024]">
+            Welcome! Our vibrant community has great activities for all. Join us for our Bible Study, Sunday School, fall fundraiser, special program, and more.
+          </h2>
+        </div>
+
+        <!-- Right Schedule Box -->
+        <div class="md:col-span-5 text-center border-t md:border-t-0 md:border-l border-stone-300 pt-8 md:pt-0 md:pl-12">
+          <div class="w-12 h-12 mx-auto mb-4 text-[#4f616d] text-3xl">
+            <i class="fa-solid fa-church"></i>
+          </div>
+          <h3 class="font-serif text-3xl text-[#1a2024] mb-4">Sunday Services</h3>
+          <p class="text-sm text-stone-600 mb-1">Orthros: <strong>9:30 am</strong></p>
+          <p class="text-sm text-stone-600 mb-6">Divine Liturgy: <strong>10:30 am</strong></p>
+          <p class="text-xs text-stone-400 uppercase tracking-widest mb-1">Live streaming on the</p>
+          <a href="#live" class="text-xs font-bold text-[#4f616d] uppercase tracking-widest border-b border-[#4f616d] pb-0.5 hover:text-[#c5a059] hover:border-[#c5a059] transition">
+            SERMONS PAGE
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3 TILES (WATCH LIVE / CANDLE / TOUR) ================= -->
+  <section class="w-full bg-[#4f616d]">
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      <!-- Tile 1 -->
+      <div class="relative h-72 sm:h-80 overflow-hidden group cursor-pointer" onclick="openVideoModal()">
+        <img src="images/tile-liturgy.jpg" alt="Watch Live" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h3 class="font-serif text-3xl text-white tracking-wide group-hover:text-[#c5a059] transition">Watch Live</h3>
+        </div>
+      </div>
+
+      <!-- Tile 2 -->
+      <div class="relative h-72 sm:h-80 overflow-hidden group cursor-pointer" onclick="openModal('candle')">
+        <img src="images/tile-candle.jpg" alt="Light a Candle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h3 class="font-serif text-3xl text-white tracking-wide group-hover:text-[#c5a059] transition">Candle</h3>
+        </div>
+      </div>
+
+      <!-- Tile 3 -->
+      <div class="relative h-72 sm:h-80 overflow-hidden group cursor-pointer" onclick="openModal('tour')">
+        <img src="images/tile-cupola.jpg" alt="Tour Sanctuary" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80">
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h3 class="font-serif text-3xl text-white tracking-wide group-hover:text-[#c5a059] transition">Tour</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary Nav Bar beneath tiles -->
+    <div class="py-4 px-6 border-t border-white/10 hidden md:block">
+      <div class="max-w-[1240px] mx-auto flex justify-center space-x-10 text-xs font-semibold text-white/80 uppercase tracking-widest">
+        <a href="#" class="hover:text-white transition">HOME</a>
+        <a href="#about" class="hover:text-white transition">PAGES</a>
+        <a href="#live" class="hover:text-white transition">SERMONS</a>
+        <a href="#about" class="hover:text-white transition">CAMPAIGNS</a>
+        <a href="#footer" class="hover:text-white transition">MINISTRIES</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT US ================= -->
+  <section id="about" class="w-full bg-[#f8f6f0] py-24 lg:py-32">
+    <div class="max-w-[1240px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6 pr-0 lg:pr-6">
+          <span class="text-[11px] font-bold tracking-[0.2em] text-[#4f616d] uppercase block mb-4">ABOUT US</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-[#1a2024] leading-tight mb-8">
+            We welcome all members, visitors, and future stewards of Our Church
+          </h2>
+          <p class="text-sm text-stone-600 leading-relaxed mb-8">
+            At Christian Orthodox Church, our mission is to provide a sanctuary for worship, a space for spiritual growth, and a community that embodies the love and teachings of Jesus Christ. Rooted in the ancient traditions of the Eastern Orthodox Church, we strive to create an environment where individuals can experience the profound beauty of Orthodox Christian faith in a modern context.
+          </p>
+          <button onclick="openModal('about-orthodox')" class="bg-[#4f616d] hover:bg-[#394751] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition">
+            LEARN MORE
+          </button>
+        </div>
+
+        <div class="lg:col-span-6">
+          <img src="images/church-portal.jpg" alt="Parishioners entering church" class="w-full h-auto shadow-2xl object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIVE BROADCAST ================= -->
+  <section id="live" class="w-full bg-white py-24 text-center">
+    <div class="max-w-[1240px] mx-auto px-6">
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[#4f616d] uppercase block mb-2">LIVE BROADCAST</span>
+      <h2 class="font-serif text-4xl sm:text-5xl text-[#1a2024] mb-12">
+        Watch Live-Stream<br>of Divine Services
+      </h2>
+
+      <div class="relative max-w-4xl mx-auto overflow-hidden shadow-2xl cursor-pointer group mb-12" onclick="openVideoModal()">
+        <img src="images/live-stream.jpg" alt="Divine Liturgy Stream" class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500">
+        <div class="absolute inset-0 bg-black/35 flex items-center justify-center">
+          <span class="w-20 h-20 rounded-full bg-white text-[#4f616d] flex items-center justify-center text-2xl shadow-xl group-hover:scale-110 transition pl-1">
+            <i class="fa-solid fa-play"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <button onclick="openVideoModal()" class="bg-[#4f616d] hover:bg-[#394751] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition">
+          VIEW LIVE STREAM
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="footer" class="w-full bg-[#1a2024] text-white/70 pt-20 pb-10 text-xs">
+    <div class="max-w-[1240px] mx-auto px-6">
+      <div class="text-center mb-14">
+        <span class="font-serif text-4xl text-white font-bold tracking-wider">CHRISTIAN</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16 border-b border-white/10 text-center md:text-left">
+        <div>
+          <h4 class="font-serif text-lg text-white mb-4">Parish</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-white transition">About Our Faith</a></li>
+            <li><a href="#live" class="hover:text-white transition">Divine Liturgy</a></li>
+            <li><a href="#" onclick="openModal('sacraments'); return false;" class="hover:text-white transition">Holy Sacraments</a></li>
+            <li><a href="#" onclick="openDonateModal(); return false;" class="hover:text-white transition">Stewardship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-lg text-white mb-4">Ministries</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">Sunday School</a></li>
+            <li><a href="#" class="hover:text-white transition">Philoptochos Society</a></li>
+            <li><a href="#" class="hover:text-white transition">Byzantine Choir</a></li>
+            <li><a href="#" class="hover:text-white transition">Youth GOYA</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-lg text-white mb-4">Location</h4>
+          <p class="leading-relaxed mb-4">
+            Christian Orthodox Cathedral<br>
+            319 East 74th St<br>
+            New York, NY 10021
+          </p>
+          <a href="#" onclick="showToast('Loading cathedral map...'); return false;" class="text-[11px] font-bold text-white tracking-widest uppercase border-b border-white pb-0.5">GET DIRECTIONS</a>
+        </div>
+
+        <div>
+          <h4 class="font-serif text-lg text-white mb-4">Contacts</h4>
+          <p class="leading-relaxed mb-4">
+            (212) 555-0188<br>
+            cathedral@orthodoxchristian.org
+          </p>
+          <div class="flex justify-center md:justify-start space-x-4 text-base text-white">
+            <a href="#" class="hover:text-[#c5a059] transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-[#c5a059] transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-[#c5a059] transition"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 text-center text-white/40 text-[11px]">
+        cmsmasters ©2024 - All Rights Reserved - Christian Orthodox Theme.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="sideDrawerBackdrop" class="fixed inset-0 bg-black/60 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="sideDrawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[360px] bg-[#1a2024] text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between p-8 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
+        <span class="font-serif text-2xl font-bold">CHRISTIAN</span>
+        <button id="closeDrawerBtn" class="text-white/60 hover:text-white text-2xl focus:outline-none" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col space-y-4 mb-8">
+        <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Navigation</span>
+        <a href="#" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#c5a059] transition">HOME</a>
+        <a href="#about" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#c5a059] transition">ABOUT & PARISH</a>
+        <a href="#live" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#c5a059] transition">SERVICES & LITURGY</a>
+        <a href="#footer" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#c5a059] transition">CONTACT</a>
+      </nav>
+
+      <div class="pt-6 border-t border-white/10">
+        <button onclick="toggleSideDrawer(false); openDonateModal();" class="w-full bg-[#4f616d] hover:bg-[#394751] text-white text-xs font-bold uppercase tracking-widest py-3 transition shadow mb-6">
+          GIVE!
+        </button>
+        <p class="text-xs text-white/70 leading-relaxed">
+          319 East 74th St, New York, NY 10021<br>
+          (212) 555-0188
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= VIDEO MODAL ================= -->
+  <div id="videoModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="relative w-full max-w-4xl bg-black shadow-2xl">
+      <button onclick="closeVideoModal()" class="absolute -top-12 right-0 text-white/80 hover:text-white text-3xl focus:outline-none transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="relative pt-[56.25%] w-full bg-black">
+        <iframe id="videoIframe" class="absolute inset-0 w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CONTENT MODAL ================= -->
+  <div id="contentModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="contentModalCard" class="relative w-full max-w-2xl bg-white shadow-2xl my-8 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+      <button onclick="closeContentModal()" class="absolute top-5 right-5 z-20 w-8 h-8 bg-stone-100 hover:bg-[#4f616d] hover:text-white rounded-none flex items-center justify-center text-sm transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="modalImageContainer" class="w-full h-64 bg-stone-100 overflow-hidden">
+        <img id="modalImage" src="" alt="Modal Image" class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-6 sm:p-10">
+        <h3 class="font-serif text-3xl text-[#1a2024] mb-4" id="modalTitle">Title</h3>
+        <div class="text-[#616a70] text-sm leading-relaxed space-y-4" id="modalBody"></div>
+        <div class="mt-8 pt-6 border-t border-stone-100 flex justify-end">
+          <button onclick="closeContentModal()" class="bg-[#4f616d] text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 hover:bg-[#394751] transition">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DONATION MODAL ================= -->
+  <div id="donateModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="donateModalCard" class="relative w-full max-w-lg bg-white shadow-2xl p-6 sm:p-10 transform scale-95 opacity-0 transition-all duration-300 my-8">
+      <button onclick="closeDonateModal()" class="absolute top-5 right-5 text-stone-400 hover:text-[#1a2024] text-2xl transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <span class="text-[11px] font-bold tracking-[0.2em] text-[#4f616d] uppercase block mb-1">Stewardship Offering</span>
+      <h3 class="font-serif text-3xl text-[#1a2024] mb-6">Support Orthodox Cathedral</h3>
+
+      <form id="donationForm" onsubmit="handleDonationSubmit(event)" class="space-y-5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2.5">Select Stewardship Amount (USD)</label>
+          <div class="grid grid-cols-4 gap-2.5">
+            <button type="button" onclick="selectAmount(25)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1a2024] transition focus:outline-none">$25</button>
+            <button type="button" onclick="selectAmount(50)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1a2024] transition focus:outline-none bg-[#4f616d] text-white">$50</button>
+            <button type="button" onclick="selectAmount(100)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1a2024] transition focus:outline-none">$100</button>
+            <button type="button" onclick="selectAmount(250)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1a2024] transition focus:outline-none">$250</button>
+          </div>
+          <div class="mt-3">
+            <input type="number" id="customAmount" placeholder="Or custom amount ($)" min="1" class="w-full bg-[#f8f6f0] border border-transparent focus:border-[#4f616d] px-4 py-2.5 text-xs text-[#1a2024] outline-none transition">
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <input type="text" id="donorName" required placeholder="Full Name *" class="w-full bg-[#f8f6f0] border border-transparent focus:border-[#4f616d] px-4 py-3 text-xs text-[#1a2024] outline-none transition">
+          <input type="email" id="donorEmail" required placeholder="Email Address *" class="w-full bg-[#f8f6f0] border border-transparent focus:border-[#4f616d] px-4 py-3 text-xs text-[#1a2024] outline-none transition">
+        </div>
+
+        <button type="submit" class="w-full bg-[#4f616d] hover:bg-[#394751] text-white text-xs font-bold uppercase tracking-widest py-3.5 transition shadow focus:outline-none">
+          CONFIRM STEWARDSHIP
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST ================= -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 bg-[#1a2024] text-white px-6 py-4 shadow-2xl flex items-center space-x-3 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-[#c5a059] text-lg"></i>
+    <span id="toastMessage" class="text-xs tracking-wide font-medium">Recorded successfully.</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    const ARTICLES = {
+      'candle': {
+        title: 'Light a Votive Candle & Prayer',
+        image: 'images/tile-candle.jpg',
+        body: '<p>In Orthodox tradition, lighting a candle is an ancient act of prayer and sacrifice. We invite you to light a candle for the health, salvation, and memory of beloved departed souls.</p>'
+      },
+      'tour': {
+        title: 'Tour Our Byzantine Sanctuary',
+        image: 'images/tile-cupola.jpg',
+        body: '<p>Explore our historic iconostasis, hand-painted iconography frescoes, and holy relics. Docent-guided tours are offered following Divine Liturgy every Sunday.</p>'
+      },
+      'about-orthodox': {
+        title: 'The Orthodox Christian Faith',
+        image: 'images/church-portal.jpg',
+        body: '<p>The Orthodox Church is the historical Christian Church founded by Jesus Christ and His Apostles. We maintain unbroken theological continuity, sacramental life, and holy tradition.</p>'
+      },
+      'sacraments': {
+        title: 'The Holy Sacraments (Mysteries)',
+        image: 'images/tile-liturgy.jpg',
+        body: '<p>From Holy Baptism and Chrismation to the Holy Eucharist, Confession, and Marriage, the Sacraments impart divine grace into the believer’s earthly journey.</p>'
+      }
+    };
+
+    // Mobile Drawer
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideDrawer = document.getElementById('sideDrawer');
+    const sideDrawerBackdrop = document.getElementById('sideDrawerBackdrop');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function toggleSideDrawer(open) {
+      if (open) {
+        sideDrawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sideDrawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      }
+    }
+    if (burgerBtn) burgerBtn.addEventListener('click', () => toggleSideDrawer(true));
+    closeDrawerBtn.addEventListener('click', () => toggleSideDrawer(false));
+    sideDrawerBackdrop.addEventListener('click', () => toggleSideDrawer(false));
+    drawerLinks.forEach(l => l.addEventListener('click', () => toggleSideDrawer(false)));
+
+    // Video Modal
+    const videoModal = document.getElementById('videoModal');
+    const videoIframe = document.getElementById('videoIframe');
+    function openVideoModal() {
+      videoIframe.src = "https://player.vimeo.com/video/96728225?autoplay=1";
+      videoModal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVideoModal() {
+      videoIframe.src = "";
+      videoModal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+    videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideoModal(); });
+
+    // Content Modal
+    const contentModalBackdrop = document.getElementById('contentModalBackdrop');
+    const contentModalCard = document.getElementById('contentModalCard');
+    const modalImageContainer = document.getElementById('modalImageContainer');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    function openModal(key) {
+      const data = ARTICLES[key];
+      if (!data) return;
+      if (data.image) {
+        modalImageContainer.classList.remove('hidden');
+        modalImage.src = data.image;
+      } else {
+        modalImageContainer.classList.add('hidden');
+      }
+      modalTitle.textContent = data.title;
+      modalBody.innerHTML = data.body;
+
+      contentModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        contentModalCard.classList.remove('scale-95', 'opacity-0');
+        contentModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeContentModal() {
+      contentModalCard.classList.remove('scale-100', 'opacity-100');
+      contentModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        contentModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    contentModalBackdrop.addEventListener('click', (e) => { if (e.target === contentModalBackdrop) closeContentModal(); });
+
+    // Donation Modal
+    const donateModalBackdrop = document.getElementById('donateModalBackdrop');
+    const donateModalCard = document.getElementById('donateModalCard');
+    let currentDonationAmount = 50;
+
+    function openDonateModal() {
+      donateModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        donateModalCard.classList.remove('scale-95', 'opacity-0');
+        donateModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDonateModal() {
+      donateModalCard.classList.remove('scale-100', 'opacity-100');
+      donateModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        donateModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    donateModalBackdrop.addEventListener('click', (e) => { if (e.target === donateModalBackdrop) closeDonateModal(); });
+
+    function selectAmount(val) {
+      currentDonationAmount = val;
+      document.getElementById('customAmount').value = '';
+      document.querySelectorAll('.amt-btn').forEach(btn => {
+        if (btn.textContent.includes(val)) {
+          btn.classList.add('bg-[#4f616d]', 'text-white');
+        } else {
+          btn.classList.remove('bg-[#4f616d]', 'text-white');
+        }
+      });
+    }
+
+    function handleDonationSubmit(e) {
+      e.preventDefault();
+      const custom = document.getElementById('customAmount').value;
+      const amt = custom ? custom : currentDonationAmount;
+      const donor = document.getElementById('donorName').value;
+      closeDonateModal();
+      showToast(`Blessings, ${donor}! Your stewardship of $${amt} was received.`);
+      document.getElementById('donationForm').reset();
+      selectAmount(50);
+    }
+
+    // Toast
+    const toastEl = document.getElementById('toastNotification');
+    const toastMsgEl = document.getElementById('toastMessage');
+    let toastTimeout;
+    function showToast(msg) {
+      clearTimeout(toastTimeout);
+      toastMsgEl.textContent = msg;
+      toastEl.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+
+    // Escape Key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeContentModal();
+        closeDonateModal();
+        closeVideoModal();
+        toggleSideDrawer(false);
+      }
+    });
+  </script>
+
+</body>
+</html>

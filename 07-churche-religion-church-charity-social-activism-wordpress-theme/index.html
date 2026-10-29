@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHURCHE – Religion & Social Activism</title>
+
+  <!-- Google Fonts: Bebas Neue, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            bebas: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            churche: {
+              sand: '#d5cfc5',
+              sandLight: '#e4dfd6',
+              olive: '#383c34',
+              oliveDark: '#282b24',
+              tan: '#a67c52',
+              tanDark: '#8c653f',
+              charcoal: '#1d1e1c',
+              text: '#5c5f59',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #5c5f59;
+      background-color: #d5cfc5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-bebas {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#a67c52] selection:text-white">
+
+  <!-- ================= HEADER ================= -->
+  <header class="w-full bg-[#383c34] text-white sticky top-0 z-40 transition-all border-b border-white/10">
+    <div class="max-w-[1360px] mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <span class="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center text-xs text-[#a67c52]">
+          <i class="fa-solid fa-cross"></i>
+        </span>
+        <span class="font-bebas text-3xl tracking-widest text-white group-hover:text-[#a67c52] transition">CHURCHE</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-white/80">
+        <a href="#" class="hover:text-white transition">Home</a>
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#services" class="hover:text-white transition">Events</a>
+        <a href="#services" class="hover:text-white transition">Pages</a>
+        <a href="#charity" class="hover:text-white transition">Blog</a>
+        <a href="#footer" class="hover:text-white transition">Contact Us</a>
+      </nav>
+
+      <!-- Action (Search & Donate - NO SHOP ICON) -->
+      <div class="flex items-center space-x-4">
+        <button id="searchBtn" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:text-white transition focus:outline-none" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass text-xs"></i>
+        </button>
+        <button onclick="openDonateModal()" class="bg-[#a67c52] hover:bg-[#8c653f] text-white text-[11px] font-bold uppercase tracking-widest px-6 py-2.5 transition">
+          Donate Now
+        </button>
+        <button id="burgerBtn" class="text-white hover:text-[#a67c52] p-1 focus:outline-none lg:hidden text-2xl" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative w-full min-h-[640px] lg:min-h-[800px] bg-cover bg-center overflow-hidden flex items-center" style="background-image: url('images/hero-bg.jpg');">
+    <div class="absolute inset-0 bg-[#383c34]/70 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="max-w-[1360px] w-full mx-auto px-6 relative z-10 py-24">
+      <div class="inline-flex items-center space-x-2 bg-white/15 px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-widest mb-6">
+        <span class="w-2 h-2 rounded-full bg-[#a67c52]"></span>
+        <span>TOGETHER IN CHRIST</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8">
+          <h1 class="font-bebas text-6xl sm:text-8xl lg:text-[110px] leading-[0.9] text-white uppercase tracking-tight">
+            WE ARE<br>THE CHURCHE
+          </h1>
+        </div>
+
+        <div class="lg:col-span-4 bg-black/40 p-6 backdrop-blur-sm border-l-2 border-[#a67c52] text-white">
+          <span class="text-xs font-bold text-[#a67c52] tracking-widest uppercase block mb-1">10-18 OCT, 2025</span>
+          <p class="text-xs text-white/80 leading-relaxed mb-6">
+            We're Churche — a faith-driven collective in NYC, uniting believers and social activists for impactful kingdom works.
+          </p>
+          <button onclick="openModal('quote')" class="bg-[#a67c52] hover:bg-[#8c653f] text-white text-[10px] font-bold uppercase tracking-widest px-6 py-2.5 transition">
+            GET INVOLVED
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHORT MESSAGE FROM THE PASTOR ================= -->
+  <section id="about" class="w-full bg-[#d5cfc5] py-24 lg:py-32">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Church illustration -->
+        <div class="lg:col-span-4">
+          <div class="relative overflow-hidden shadow-lg aspect-[3/4]">
+            <img src="images/church-building.jpg" alt="Churche Historic Sanctuary" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Center message -->
+        <div class="lg:col-span-5">
+          <div class="inline-flex items-center space-x-2 text-[10px] font-bold text-[#383c34] uppercase tracking-widest mb-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#a67c52]"></span>
+            <span>TOGETHER IN CHRIST</span>
+          </div>
+          <h2 class="font-bebas text-5xl sm:text-6xl text-[#1d1e1c] leading-[0.95] mb-6">
+            SHORT MESSAGE FROM THE PASTOR OR CHURCH LEADER
+          </h2>
+          <p class="text-sm text-[#5c5f59] leading-relaxed mb-6">
+            We are a warm and welcoming community of believers committed to growing in church, serving others, and sharing the love of Christ. Whether you're exploring faith for the first time or looking for a church to call home, we invite you to join us and experience the love and fellowship of our congregation.
+          </p>
+          <div class="flex items-center space-x-4 pt-4 border-t border-stone-400/40">
+            <i class="fa-solid fa-book-bible text-2xl text-[#a67c52]"></i>
+            <span class="font-serif italic text-xs text-[#383c34]">"Grace and peace to you in abundance."</span>
+          </div>
+        </div>
+
+        <!-- Right Pastor photo -->
+        <div class="lg:col-span-3">
+          <div class="relative overflow-hidden shadow-lg aspect-[3/4]">
+            <img src="images/pastor-leader.jpg" alt="Pastor & Leader" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= A CHRIST-CENTERED FELLOWSHIP FOR ALL ================= -->
+  <section class="w-full bg-[#d5cfc5] py-20 border-t border-stone-300">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left praying photo -->
+        <div class="lg:col-span-4">
+          <div class="relative overflow-hidden shadow-lg aspect-[3/4]">
+            <img src="images/pastor-praying.jpg" alt="Prayer Leader" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Center stats and details -->
+        <div class="lg:col-span-4 text-center lg:text-left">
+          <h2 class="font-bebas text-5xl sm:text-6xl text-[#1d1e1c] leading-[0.95] mb-6">
+            A CHRIST-CENTERED FELLOWSHIP FOR ALL
+          </h2>
+          <button onclick="openModal('fellowship')" class="bg-[#a67c52] hover:bg-[#8c653f] text-white text-xs font-bold uppercase tracking-widest px-8 py-3 mb-10 transition">
+            Learn About Us
+          </button>
+
+          <div class="space-y-6">
+            <div class="flex items-baseline space-x-4 border-b border-stone-400/40 pb-3">
+              <span class="font-bebas text-4xl text-[#1d1e1c]">500+</span>
+              <span class="text-xs uppercase tracking-wider text-[#5c5f59]">Sermons Preached</span>
+            </div>
+            <div class="flex items-baseline space-x-4 border-b border-stone-400/40 pb-3">
+              <span class="font-bebas text-4xl text-[#1d1e1c]">25+</span>
+              <span class="text-xs uppercase tracking-wider text-[#5c5f59]">Years in Ministry</span>
+            </div>
+            <div class="flex items-baseline space-x-4">
+              <span class="font-bebas text-4xl text-[#1d1e1c]">2.5K+</span>
+              <span class="text-xs uppercase tracking-wider text-[#5c5f59]">Baptisms Performed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right congregation photo -->
+        <div class="lg:col-span-4">
+          <div class="relative overflow-hidden shadow-lg aspect-[4/3]">
+            <img src="images/women-praying.jpg" alt="Fellowship Prayer" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES AND WORSHIP ================= -->
+  <section id="services" class="w-full bg-[#d5cfc5] py-24 lg:py-32 border-t border-stone-300">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-[10px] font-bold text-[#a67c52] uppercase tracking-[0.2em] block mb-2">DIVINE ADORATION</span>
+        <h2 class="font-bebas text-6xl sm:text-7xl text-[#1d1e1c]">
+          SERVICES AND WORSHIP
+        </h2>
+      </div>
+
+      <div class="space-y-12">
+        <!-- Service 01 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white/40 p-6 sm:p-10 rounded-none shadow-sm">
+          <div class="lg:col-span-2">
+            <span class="font-bebas text-6xl sm:text-7xl text-[#1d1e1c]">01</span>
+          </div>
+          <div class="lg:col-span-6">
+            <h3 class="font-bebas text-3xl text-[#1d1e1c] mb-2">SUNDAY MORNING GATHERING</h3>
+            <p class="text-xs text-[#5c5f59] leading-relaxed mb-4">
+              Step into a place of reverence and community with Churche. Embrace the liturgical tradition with passionate contemporary worship.
+            </p>
+            <button onclick="openModal('service-1')" class="text-xs font-bold uppercase tracking-widest text-[#a67c52] hover:underline">
+              DETAILS & SCHEDULE →
+            </button>
+          </div>
+          <div class="lg:col-span-4 h-44 overflow-hidden">
+            <img src="images/prayer-woman.jpg" alt="Sunday Gathering" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Service 02 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white/40 p-6 sm:p-10 rounded-none shadow-sm">
+          <div class="lg:col-span-2">
+            <span class="font-bebas text-6xl sm:text-7xl text-[#1d1e1c]">02</span>
+          </div>
+          <div class="lg:col-span-6">
+            <h3 class="font-bebas text-3xl text-[#1d1e1c] mb-2">COMMUNITY BIBLE EXPLORATION</h3>
+            <p class="text-xs text-[#5c5f59] leading-relaxed mb-4">
+              Midweek gatherings analyzing scripture in historical context and exploring practical applications for modern urban life.
+            </p>
+            <button onclick="openModal('service-2')" class="text-xs font-bold uppercase tracking-widest text-[#a67c52] hover:underline">
+              DETAILS & SCHEDULE →
+            </button>
+          </div>
+          <div class="lg:col-span-4 h-44 overflow-hidden">
+            <img src="images/event-youth.jpg" alt="Bible Study" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Service 03 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white/40 p-6 sm:p-10 rounded-none shadow-sm">
+          <div class="lg:col-span-2">
+            <span class="font-bebas text-6xl sm:text-7xl text-[#1d1e1c]">03</span>
+          </div>
+          <div class="lg:col-span-6">
+            <h3 class="font-bebas text-3xl text-[#1d1e1c] mb-2">SPECIAL PRAYER SESSIONS</h3>
+            <p class="text-xs text-[#5c5f59] leading-relaxed mb-4">
+              Quiet evenings of contemplation, guided intercessory prayer for our neighborhoods, and acoustic candlelight adoration.
+            </p>
+            <button onclick="openModal('service-3')" class="text-xs font-bold uppercase tracking-widest text-[#a67c52] hover:underline">
+              DETAILS & SCHEDULE →
+            </button>
+          </div>
+          <div class="lg:col-span-4 h-44 overflow-hidden">
+            <img src="images/pastor-praying.jpg" alt="Prayer Sessions" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHARITY & SOCIAL ACTIVISM ================= -->
+  <section id="charity" class="w-full bg-[#383c34] text-white py-24">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6">
+          <span class="text-[10px] font-bold text-[#a67c52] uppercase tracking-[0.2em] block mb-2">OUTREACH & JUSTICE</span>
+          <h2 class="font-bebas text-5xl sm:text-6xl leading-[0.95] mb-6">
+            FAITH IN ACTION FOR OUR NEIGHBORS
+          </h2>
+          <p class="text-xs text-white/80 leading-relaxed mb-8">
+            True religion extends beyond sanctuary walls. We partner with local civic leaders to feed the unhoused, support immigrant families, and build sustainable neighborhood cooperatives.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button onclick="openDonateModal()" class="bg-[#a67c52] hover:bg-[#8c653f] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition">
+              Donate to Outreach
+            </button>
+            <button onclick="openModal('volunteer')" class="border border-white/40 hover:bg-white hover:text-[#1d1e1c] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition">
+              Volunteer
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <img src="images/charity-food.jpg" alt="Food Outreach" class="w-full h-48 object-cover">
+          <img src="images/blog-activism.jpg" alt="Community Hands" class="w-full h-48 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="footer" class="w-full bg-[#1d1e1c] text-white/70 pt-20 pb-10 text-xs">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16 border-b border-white/10">
+        <div>
+          <span class="font-bebas text-3xl text-white tracking-widest block mb-4">CHURCHE</span>
+          <p class="leading-relaxed mb-4 text-white/60">
+            A creative fellowship rooted in Christ and serving the heart of the city.<br>
+            New York, NY 10001
+          </p>
+          <div class="flex space-x-3 text-sm text-white">
+            <a href="#" class="hover:text-[#a67c52] transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-[#a67c52] transition"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="hover:text-[#a67c52] transition"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bebas text-xl text-white tracking-wider mb-4">QUICK LINKS</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-white transition">About Churche</a></li>
+            <li><a href="#services" class="hover:text-white transition">Worship Gatherings</a></li>
+            <li><a href="#charity" class="hover:text-white transition">Social Activism</a></li>
+            <li><a href="#" onclick="openDonateModal(); return false;" class="hover:text-white transition">Giving & Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bebas text-xl text-white tracking-wider mb-4">SERVICE HOURS</h4>
+          <p class="leading-relaxed text-white/60">
+            Sunday Worship: 10:30 AM<br>
+            Wednesday Prayer: 7:00 PM<br>
+            Community Pantry: Saturdays 9:00 AM
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bebas text-xl text-white tracking-wider mb-4">NEWSLETTER</h4>
+          <p class="leading-relaxed mb-3 text-white/60">Stay updated on our collective action & sermons.</p>
+          <form onsubmit="handleNewsletter(event)" class="flex">
+            <input type="email" required placeholder="Enter your email" class="bg-white/10 px-3 py-2 text-xs text-white placeholder-white/40 outline-none flex-grow">
+            <button type="submit" class="bg-[#a67c52] px-4 py-2 font-bold text-white uppercase text-[10px] tracking-wider">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-8 text-center text-white/40 text-[11px]">
+        Churche ©2025. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="sideDrawerBackdrop" class="fixed inset-0 bg-black/60 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="sideDrawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[360px] bg-[#383c34] text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between p-8 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
+        <span class="font-bebas text-3xl tracking-widest">CHURCHE</span>
+        <button id="closeDrawerBtn" class="text-white/60 hover:text-white text-2xl focus:outline-none" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col space-y-4 mb-8">
+        <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Navigation</span>
+        <a href="#" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#a67c52] transition">HOME</a>
+        <a href="#about" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#a67c52] transition">ABOUT CHURCHE</a>
+        <a href="#services" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#a67c52] transition">SERVICES & WORSHIP</a>
+        <a href="#charity" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#a67c52] transition">SOCIAL ACTIVISM</a>
+        <a href="#footer" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#a67c52] transition">CONTACT</a>
+      </nav>
+
+      <div class="pt-6 border-t border-white/10">
+        <button onclick="toggleSideDrawer(false); openDonateModal();" class="w-full bg-[#a67c52] hover:bg-[#8c653f] text-white text-xs font-bold uppercase tracking-widest py-3 transition shadow mb-6">
+          Donate Now
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= CONTENT MODAL ================= -->
+  <div id="contentModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="contentModalCard" class="relative w-full max-w-2xl bg-white shadow-2xl my-8 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+      <button onclick="closeContentModal()" class="absolute top-5 right-5 z-20 w-8 h-8 bg-stone-100 hover:bg-[#383c34] hover:text-white rounded-none flex items-center justify-center text-sm transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="modalImageContainer" class="w-full h-60 bg-stone-100 overflow-hidden">
+        <img id="modalImage" src="" alt="Modal Image" class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-6 sm:p-10">
+        <h3 class="font-bebas text-4xl text-[#1d1e1c] mb-4" id="modalTitle">Title</h3>
+        <div class="text-[#5c5f59] text-sm leading-relaxed space-y-4" id="modalBody"></div>
+        <div class="mt-8 pt-6 border-t border-stone-200 flex justify-end">
+          <button onclick="closeContentModal()" class="bg-[#383c34] text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 hover:bg-[#a67c52] transition">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DONATION MODAL ================= -->
+  <div id="donateModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="donateModalCard" class="relative w-full max-w-lg bg-white shadow-2xl p-6 sm:p-10 transform scale-95 opacity-0 transition-all duration-300 my-8">
+      <button onclick="closeDonateModal()" class="absolute top-5 right-5 text-stone-400 hover:text-[#1d1e1c] text-2xl transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <span class="text-[10px] font-bold tracking-[0.2em] text-[#a67c52] uppercase block mb-1">Churche Stewardship</span>
+      <h3 class="font-bebas text-4xl text-[#1d1e1c] mb-6">Support Our Mission</h3>
+
+      <form id="donationForm" onsubmit="handleDonationSubmit(event)" class="space-y-5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2.5">Select Offering Amount (USD)</label>
+          <div class="grid grid-cols-4 gap-2.5">
+            <button type="button" onclick="selectAmount(25)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1d1e1c] transition focus:outline-none">$25</button>
+            <button type="button" onclick="selectAmount(50)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1d1e1c] transition focus:outline-none bg-[#383c34] text-white">$50</button>
+            <button type="button" onclick="selectAmount(100)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1d1e1c] transition focus:outline-none">$100</button>
+            <button type="button" onclick="selectAmount(250)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1d1e1c] transition focus:outline-none">$250</button>
+          </div>
+          <div class="mt-3">
+            <input type="number" id="customAmount" placeholder="Or custom amount ($)" min="1" class="w-full bg-[#d5cfc5]/30 border border-transparent focus:border-[#a67c52] px-4 py-2.5 text-xs text-[#1d1e1c] outline-none transition">
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <input type="text" id="donorName" required placeholder="Full Name *" class="w-full bg-[#d5cfc5]/30 border border-transparent focus:border-[#a67c52] px-4 py-3 text-xs text-[#1d1e1c] outline-none transition">
+          <input type="email" id="donorEmail" required placeholder="Email Address *" class="w-full bg-[#d5cfc5]/30 border border-transparent focus:border-[#a67c52] px-4 py-3 text-xs text-[#1d1e1c] outline-none transition">
+        </div>
+
+        <button type="submit" class="w-full bg-[#a67c52] hover:bg-[#8c653f] text-white text-xs font-bold uppercase tracking-widest py-3.5 transition shadow focus:outline-none">
+          CONFIRM DONATION
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST ================= -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 bg-[#1d1e1c] text-white px-6 py-4 shadow-2xl flex items-center space-x-3 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-[#a67c52] text-lg"></i>
+    <span id="toastMessage" class="text-xs tracking-wide font-medium">Message sent successfully.</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    const ARTICLES = {
+      'quote': {
+        title: 'Join the Churche Movement',
+        image: 'images/hero-bg.jpg',
+        body: '<p>Churche connects passionate followers of Christ with real social action in New York City. From weekly street outreach to creative arts devotionals, join our fellowship.</p>'
+      },
+      'fellowship': {
+        title: 'Our Christ-Centered Fellowship',
+        image: 'images/women-praying.jpg',
+        body: '<p>We are a non-denominational congregation dedicated to biblical truth, active justice, radical hospitality, and empowering believers for kingdom impact.</p>'
+      },
+      'service-1': {
+        title: 'Sunday Morning Gathering',
+        image: 'images/prayer-woman.jpg',
+        body: '<p>Every Sunday at 10:30 AM in our main sanctuary. Experience powerful praise music, authentic community prayer, and verse-by-verse scriptural teaching.</p>'
+      },
+      'service-2': {
+        title: 'Community Bible Exploration',
+        image: 'images/event-youth.jpg',
+        body: '<p>Wednesday evenings at 7:00 PM. An interactive small-group format discussing how biblical wisdom applies to career, family, and society.</p>'
+      },
+      'service-3': {
+        title: 'Special Prayer Sessions',
+        image: 'images/pastor-praying.jpg',
+        body: '<p>First Friday of every month at 8:00 PM. An evening of candlelight, silent meditation, and prayers for urban renewal and healing.</p>'
+      },
+      'volunteer': {
+        title: 'Volunteer with Churche Outreach',
+        image: 'images/charity-food.jpg',
+        body: '<p>We need volunteers for our food distribution warehouse, community garden, and legal aid ministry. Sign up today to serve!</p>'
+      }
+    };
+
+    // Drawer
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideDrawer = document.getElementById('sideDrawer');
+    const sideDrawerBackdrop = document.getElementById('sideDrawerBackdrop');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function toggleSideDrawer(open) {
+      if (open) {
+        sideDrawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sideDrawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      }
+    }
+    if (burgerBtn) burgerBtn.addEventListener('click', () => toggleSideDrawer(true));
+    closeDrawerBtn.addEventListener('click', () => toggleSideDrawer(false));
+    sideDrawerBackdrop.addEventListener('click', () => toggleSideDrawer(false));
+    drawerLinks.forEach(l => l.addEventListener('click', () => toggleSideDrawer(false)));
+
+    // Content Modal
+    const contentModalBackdrop = document.getElementById('contentModalBackdrop');
+    const contentModalCard = document.getElementById('contentModalCard');
+    const modalImageContainer = document.getElementById('modalImageContainer');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    function openModal(key) {
+      const data = ARTICLES[key];
+      if (!data) return;
+      if (data.image) {
+        modalImageContainer.classList.remove('hidden');
+        modalImage.src = data.image;
+      } else {
+        modalImageContainer.classList.add('hidden');
+      }
+      modalTitle.textContent = data.title;
+      modalBody.innerHTML = data.body;
+
+      contentModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        contentModalCard.classList.remove('scale-95', 'opacity-0');
+        contentModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeContentModal() {
+      contentModalCard.classList.remove('scale-100', 'opacity-100');
+      contentModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        contentModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    contentModalBackdrop.addEventListener('click', (e) => { if (e.target === contentModalBackdrop) closeContentModal(); });
+
+    // Donation Modal
+    const donateModalBackdrop = document.getElementById('donateModalBackdrop');
+    const donateModalCard = document.getElementById('donateModalCard');
+    let currentDonationAmount = 50;
+
+    function openDonateModal() {
+      donateModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        donateModalCard.classList.remove('scale-95', 'opacity-0');
+        donateModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDonateModal() {
+      donateModalCard.classList.remove('scale-100', 'opacity-100');
+      donateModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        donateModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    donateModalBackdrop.addEventListener('click', (e) => { if (e.target === donateModalBackdrop) closeDonateModal(); });
+
+    function selectAmount(val) {
+      currentDonationAmount = val;
+      document.getElementById('customAmount').value = '';
+      document.querySelectorAll('.amt-btn').forEach(btn => {
+        if (btn.textContent.includes(val)) {
+          btn.classList.add('bg-[#383c34]', 'text-white');
+        } else {
+          btn.classList.remove('bg-[#383c34]', 'text-white');
+        }
+      });
+    }
+
+    function handleDonationSubmit(e) {
+      e.preventDefault();
+      const custom = document.getElementById('customAmount').value;
+      const amt = custom ? custom : currentDonationAmount;
+      const donor = document.getElementById('donorName').value;
+      closeDonateModal();
+      showToast(`Thank you, ${donor}! Your contribution of $${amt} was recorded.`);
+      document.getElementById('donationForm').reset();
+      selectAmount(50);
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      showToast('Thank you for subscribing to Churche updates!');
+      e.target.reset();
+    }
+
+    // Toast
+    const toastEl = document.getElementById('toastNotification');
+    const toastMsgEl = document.getElementById('toastMessage');
+    let toastTimeout;
+    function showToast(msg) {
+      clearTimeout(toastTimeout);
+      toastMsgEl.textContent = msg;
+      toastEl.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+
+    // Escape Key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeContentModal();
+        closeDonateModal();
+        toggleSideDrawer(false);
+      }
+    });
+  </script>
+
+</body>
+</html>

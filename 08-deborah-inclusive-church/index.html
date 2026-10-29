@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deborah – Inclusive Barrierless Church</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            deborah: {
+              yellow: '#fae896',
+              yellowDark: '#e5cf6d',
+              yellowLight: '#fef9c3',
+              dark: '#1e2124',
+              darkAlt: '#2a2e33',
+              text: '#4a4e52',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #4a4e52;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    .dropcap::first-letter {
+      font-size: 3.5rem;
+      float: left;
+      line-height: 0.8;
+      margin-right: 0.6rem;
+      font-weight: 700;
+      color: #1e2124;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#fae896] selection:text-[#1e2124]">
+
+  <!-- ================= TOP UTILITY BAR ================= -->
+  <div class="w-full bg-[#1e2124] text-white/60 text-[11px] py-2 px-6 border-b border-white/5">
+    <div class="max-w-[1360px] mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3 text-white/70">
+        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github text-xs"></i></a>
+        <a href="#" class="hover:text-white transition"><i class="fa-solid fa-cloud text-xs"></i></a>
+      </div>
+      <div class="hidden sm:flex items-center space-x-6 uppercase tracking-wider text-[10px] font-semibold text-white/70">
+        <a href="#about" class="hover:text-white transition">ACCESSIBILITY</a>
+        <a href="#about" class="hover:text-white transition">COMMUNITY</a>
+        <a href="#footer" class="hover:text-white transition">SUPPORT CENTER</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN HEADER ================= -->
+  <header class="w-full bg-white border-b border-stone-100 sticky top-0 z-40">
+    <div class="max-w-[1360px] mx-auto px-6 h-24 flex items-center justify-between">
+      <!-- Yellow Badge Logo -->
+      <a href="#" class="bg-[#fae896] px-5 py-3.5 flex items-center space-x-3 hover:bg-[#e5cf6d] transition shadow-sm">
+        <span class="w-6 h-6 border-2 border-[#1e2124] rounded-full flex items-center justify-center text-xs font-bold text-[#1e2124]">
+          <i class="fa-solid fa-hands-holding text-[10px]"></i>
+        </span>
+        <div class="flex flex-col leading-none">
+          <span class="font-extrabold text-[#1e2124] tracking-widest text-sm uppercase">DEBORAH</span>
+          <span class="text-[9px] font-bold text-[#1e2124]/75 uppercase tracking-wider">INCLUSIVE CHURCH</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs font-bold uppercase tracking-wider text-[#1e2124]">
+        <a href="#" class="border-b-2 border-[#1e2124] pb-1">HOME</a>
+        <a href="#about" class="hover:text-stone-500 transition">PAGES</a>
+        <a href="#perspective" class="hover:text-stone-500 transition">NEWS</a>
+        <a href="#pastor" class="hover:text-stone-500 transition">SERMONS</a>
+        <a href="#perspective" class="hover:text-stone-500 transition">EVENTS</a>
+      </nav>
+
+      <!-- Action (Search & Donate - NO SHOP ICON) -->
+      <div class="flex items-center space-x-4">
+        <div class="relative hidden sm:block">
+          <input type="text" id="headerSearchInput" placeholder="Search..." onkeydown="if(event.key==='Enter')showToast('Searching for: '+this.value)" class="border-b border-stone-300 py-1.5 pl-1 pr-6 text-xs text-[#1e2124] placeholder-stone-400 outline-none focus:border-[#1e2124] transition w-36 lg:w-44">
+          <i class="fa-solid fa-magnifying-glass absolute right-1 top-2.5 text-stone-400 text-xs pointer-events-none"></i>
+        </div>
+        <button onclick="openDonateModal()" class="bg-[#fae896] hover:bg-[#e5cf6d] text-[#1e2124] text-xs font-bold uppercase tracking-widest px-6 py-2.5 transition shadow-sm">
+          DONATE
+        </button>
+        <button id="burgerBtn" class="text-[#1e2124] hover:text-stone-500 p-1 focus:outline-none lg:hidden text-2xl" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative w-full min-h-[550px] lg:min-h-[680px] bg-white overflow-hidden flex items-center">
+    <!-- Subtle Architectural Background -->
+    <div class="absolute inset-y-0 right-0 w-full lg:w-2/3 bg-cover bg-right opacity-20 pointer-events-none" style="background-image: url('images/cathedral-engraving.jpg');"></div>
+
+    <div class="max-w-[1360px] w-full mx-auto px-6 relative z-10 py-16">
+      <div class="max-w-xl">
+        <h1 class="text-4xl sm:text-6xl lg:text-[68px] font-extrabold text-[#1e2124] tracking-tight leading-[1.05] mb-6">
+          Barrierless Church
+        </h1>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-8">
+          <strong class="text-[#1e2124]">Deborah</strong> is an accessibility-first church community dedicated to creating an inclusive sanctuary where every person—regardless of physical ability, neurodiversity, or life background—finds full welcome, dignity, and fellowship in Christ.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openModal('barrierless')" class="bg-[#1e2124] hover:bg-[#2a2e33] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition shadow">
+            LEARN ABOUT US
+          </button>
+          <a href="#about" class="bg-stone-100 hover:bg-stone-200 text-[#1e2124] text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition">
+            OUR INITIATIVES
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= YELLOW FEATURES RIBBON ================= -->
+  <section class="w-full bg-[#fae896] text-[#1e2124] py-14">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <!-- Feature 1 -->
+        <div class="flex flex-col items-center p-4">
+          <div class="w-12 h-12 mb-3 text-3xl text-[#1e2124]"><i class="fa-solid fa-wheelchair"></i></div>
+          <h3 class="font-extrabold text-lg uppercase tracking-wide mb-2">Accessible</h3>
+          <p class="text-xs text-[#1e2124]/80 leading-relaxed max-w-xs">
+            Complete wheelchair ramps, sensory-friendly rooms, sign-language interpreters, and large-print liturgies.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="flex flex-col items-center p-4">
+          <div class="w-12 h-12 mb-3 text-3xl text-[#1e2124]"><i class="fa-solid fa-spa"></i></div>
+          <h3 class="font-extrabold text-lg uppercase tracking-wide mb-2">Lightweight & Pure</h3>
+          <p class="text-xs text-[#1e2124]/80 leading-relaxed max-w-xs">
+            No religious bureaucracy, no exclusion. Pure gospel love, honest fellowship, and community support.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex flex-col items-center p-4">
+          <div class="w-12 h-12 mb-3 text-3xl text-[#1e2124]"><i class="fa-solid fa-hands"></i></div>
+          <h3 class="font-extrabold text-lg uppercase tracking-wide mb-2">Community Driven</h3>
+          <p class="text-xs text-[#1e2124]/80 leading-relaxed max-w-xs">
+            Every member has a voice and a seat at the table. Co-creating worship, arts, and acts of civic mercy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= A HAPPY CLOUD (STORY SECTION) ================= -->
+  <section id="about" class="w-full bg-white py-24 lg:py-32">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text -->
+        <div class="lg:col-span-6 pr-0 lg:pr-8">
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-[#1e2124] mb-8">
+            A happy cloud
+          </h2>
+          <div class="dropcap text-stone-600 text-sm leading-relaxed space-y-4 mb-8">
+            <p>
+              Maybe he has a little friend that lives right over here. And maybe a little bush lives there. Just take out whatever you don't want. It'll change your entire perspective. This is where you take out.
+            </p>
+            <p>
+              Just relax and let it flow. That easy. That's what makes life fun. That you can make these decisions. That you can create the world that you want. If you didn't have baby clouds, you wouldn't have big clouds.
+            </p>
+          </div>
+          <button onclick="openModal('cloud')" class="text-xs font-bold text-[#1e2124] uppercase tracking-widest border-b-2 border-[#1e2124] pb-1 hover:text-stone-500 hover:border-stone-500 transition">
+            READ MORE ABOUT OUR STORY →
+          </button>
+        </div>
+
+        <!-- Two Photos -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+          <img src="images/church-interior.jpg" alt="Sanctuary Interior" class="w-full h-80 object-cover shadow-md">
+          <img src="images/church-trees.jpg" alt="Church in Trees" class="w-full h-80 object-cover shadow-md">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WAVE SECTION: CHANGE YOUR PERSPECTIVE ================= -->
+  <section id="perspective" class="relative w-full">
+    <!-- Top SVG wave -->
+    <div class="w-full overflow-hidden leading-none">
+      <svg class="w-full h-12 text-[#1e2124]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,40 L1200,120 L0,120 Z" fill="currentColor"></path>
+      </svg>
+    </div>
+
+    <!-- Church Landscape Banner -->
+    <div class="w-full h-80 sm:h-96 bg-cover bg-center" style="background-image: url('images/landscape-church.jpg');"></div>
+
+    <!-- Bottom Wave content container -->
+    <div class="w-full bg-[#fae896] text-[#1e2124] py-20">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-3xl sm:text-5xl font-extrabold mb-4">
+          Change your perspective
+        </h2>
+        <p class="text-sm text-[#1e2124]/80 leading-relaxed mb-10">
+          Maybe he has a little friend that lives right over here. At home you have unlimited time. And maybe a little bush lives there.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left text-xs border-t border-[#1e2124]/20 pt-8">
+          <div>
+            <p class="leading-relaxed">
+              Just take out whatever you don't want. It'll change your entire perspective. This is where you take out all your hostilities and frustrations.
+            </p>
+          </div>
+          <div>
+            <p class="leading-relaxed">
+              Maybe he has a little friend that lives right over here. At home you have unlimited time. Son of a gun. And maybe a little bush lives there.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom SVG wave reverse -->
+    <div class="w-full overflow-hidden leading-none bg-[#fae896]">
+      <svg class="w-full h-12 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C300,90 600,-40 900,60 C1050,110 1150,30 1200,0 L1200,120 L0,120 Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ================= PASTOR QUOTE ================= -->
+  <section class="w-full bg-white py-16 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <blockquote class="text-xl sm:text-2xl font-normal text-[#1e2124] leading-relaxed mb-4">
+        “Nice little fluffy clouds laying around in the sky being lazy. We have a fantastic little sky! Isn't that fantastic that you can make whole mountains in minutes?”
+      </blockquote>
+      <span class="text-xs font-bold text-stone-500 uppercase tracking-widest">— Julia MacCarthy | Pastor</span>
+    </div>
+  </section>
+
+  <!-- ================= PASTOR SPOTLIGHT ================= -->
+  <section id="pastor" class="w-full bg-stone-50 py-20">
+    <div class="max-w-[1240px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white shadow-sm overflow-hidden">
+        <div class="lg:col-span-5 h-[420px]">
+          <img src="images/pastor-julia.jpg" alt="Pastor Julia" class="w-full h-full object-cover">
+        </div>
+        <div class="lg:col-span-7 p-8 sm:p-12">
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-[#1e2124] mb-4">
+            Just take out what you don't want
+          </h3>
+          <p class="text-xs text-stone-600 leading-relaxed mb-6">
+            It'll change your entire perspective. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs text-stone-500 leading-relaxed mb-6">
+            <p>The man who does the best job is the one who is happy at his job. Isn't that fantastic? You have to allow the mind to create to make it beautiful.</p>
+            <p>Maybe he has a little friend that lives right over here. At home you have unlimited time. A happy cloud. This is your world.</p>
+          </div>
+          <div class="font-serif italic text-lg text-stone-400">
+            Julia MacCarthy
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JUST RELAX CTA & FOOTER ================= -->
+  <section class="w-full bg-[#fae896] py-20 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1e2124] mb-3">
+        Just relax and let it flow.<br>That easy.
+      </h2>
+      <p class="text-xs text-[#1e2124]/80 leading-relaxed mb-8">
+        Just relax and let it flow. That easy. That's what makes life fun. That you can make these decisions. That you can create the world that you want.
+      </p>
+      <button onclick="openModal('touch')" class="bg-[#1e2124] hover:bg-[#2a2e33] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 transition shadow">
+        GET IN TOUCH
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="footer" class="w-full bg-[#1e2124] text-white/70 pt-20 pb-10 text-xs">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <!-- Badge Logo in footer -->
+      <div class="mb-12">
+        <div class="inline-flex bg-[#fae896] px-5 py-3 text-[#1e2124] items-center space-x-3">
+          <span class="w-5 h-5 border border-[#1e2124] rounded-full flex items-center justify-center text-[10px]"><i class="fa-solid fa-hands-holding"></i></span>
+          <span class="font-extrabold tracking-widest text-xs uppercase">DEBORAH INCLUSIVE CHURCH</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16 border-b border-white/10">
+        <div>
+          <h4 class="font-bold text-white uppercase tracking-wider mb-4">INFORMATION</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-white transition">• About us</a></li>
+            <li><a href="#" onclick="openModal('gallery'); return false;" class="hover:text-white transition">• Gallery</a></li>
+            <li><a href="#" onclick="openModal('faq'); return false;" class="hover:text-white transition">• FAQ</a></li>
+            <li><a href="#" onclick="openModal('touch'); return false;" class="hover:text-white transition">• Contacts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white uppercase tracking-wider mb-4">ABOUT US</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:text-white transition">• Our story</a></li>
+            <li><a href="#" class="hover:text-white transition">• Our partners</a></li>
+            <li><a href="#" onclick="openModal('touch'); return false;" class="hover:text-white transition">• Get in touch</a></li>
+            <li><a href="#" class="hover:text-white transition">• Privacy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white uppercase tracking-wider mb-4">THEME LINKS</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition">• Accessible Sanctuary</a></li>
+            <li><a href="#" class="hover:text-white transition">• Documentation</a></li>
+            <li><a href="#" class="hover:text-white transition">• Inclusion Policies</a></li>
+            <li><a href="#" class="hover:text-white transition">• Support Center</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white uppercase tracking-wider mb-4">DEBORAH INCLUSIVE THEME</h4>
+          <p class="leading-relaxed text-white/60 mb-4">
+            Deborah church community is designed for presenting an open sanctuary in a modern, distinctive, inclusive, and accessible style.
+          </p>
+          <button onclick="openDonateModal()" class="text-xs font-bold text-[#fae896] hover:underline uppercase tracking-wider">
+            SUPPORT OUR SANCTUARY →
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-white/40 text-[11px] gap-4">
+        <div>© 2026 Deborah · All Rights Reserved.</div>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="sideDrawerBackdrop" class="fixed inset-0 bg-black/60 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="sideDrawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[360px] bg-[#1e2124] text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between p-8 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
+        <div class="bg-[#fae896] text-[#1e2124] px-3 py-1.5 font-extrabold text-xs tracking-widest uppercase">DEBORAH</div>
+        <button id="closeDrawerBtn" class="text-white/60 hover:text-white text-2xl focus:outline-none" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col space-y-4 mb-8">
+        <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Navigation</span>
+        <a href="#" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#fae896] transition">HOME</a>
+        <a href="#about" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#fae896] transition">PAGES</a>
+        <a href="#perspective" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#fae896] transition">PERSPECTIVE</a>
+        <a href="#pastor" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#fae896] transition">PASTOR SPOTLIGHT</a>
+        <a href="#footer" class="drawer-link text-sm font-semibold tracking-wider hover:text-[#fae896] transition">CONTACT</a>
+      </nav>
+
+      <div class="pt-6 border-t border-white/10">
+        <button onclick="toggleSideDrawer(false); openDonateModal();" class="w-full bg-[#fae896] hover:bg-[#e5cf6d] text-[#1e2124] text-xs font-bold uppercase tracking-widest py-3 transition shadow mb-6">
+          DONATE
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= CONTENT MODAL ================= -->
+  <div id="contentModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="contentModalCard" class="relative w-full max-w-2xl bg-white shadow-2xl my-8 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+      <button onclick="closeContentModal()" class="absolute top-5 right-5 z-20 w-8 h-8 bg-stone-100 hover:bg-[#1e2124] hover:text-white rounded-none flex items-center justify-center text-sm transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="p-6 sm:p-10">
+        <h3 class="text-3xl font-extrabold text-[#1e2124] mb-4" id="modalTitle">Title</h3>
+        <div class="text-stone-600 text-sm leading-relaxed space-y-4" id="modalBody"></div>
+        <div class="mt-8 pt-6 border-t border-stone-200 flex justify-end">
+          <button onclick="closeContentModal()" class="bg-[#1e2124] text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 hover:bg-stone-700 transition">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DONATION MODAL ================= -->
+  <div id="donateModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="donateModalCard" class="relative w-full max-w-lg bg-white shadow-2xl p-6 sm:p-10 transform scale-95 opacity-0 transition-all duration-300 my-8">
+      <button onclick="closeDonateModal()" class="absolute top-5 right-5 text-stone-400 hover:text-[#1e2124] text-2xl transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <span class="text-[10px] font-bold tracking-[0.2em] text-[#1e2124] uppercase block mb-1">Accessibility Support</span>
+      <h3 class="text-3xl font-extrabold text-[#1e2124] mb-6">Support Barrierless Church</h3>
+
+      <form id="donationForm" onsubmit="handleDonationSubmit(event)" class="space-y-5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2.5">Select Offering Amount (USD)</label>
+          <div class="grid grid-cols-4 gap-2.5">
+            <button type="button" onclick="selectAmount(20)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1e2124] transition focus:outline-none">$20</button>
+            <button type="button" onclick="selectAmount(50)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1e2124] transition focus:outline-none bg-[#fae896]">$50</button>
+            <button type="button" onclick="selectAmount(100)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1e2124] transition focus:outline-none">$100</button>
+            <button type="button" onclick="selectAmount(250)" class="amt-btn border border-stone-200 py-2.5 text-xs font-bold text-[#1e2124] transition focus:outline-none">$250</button>
+          </div>
+          <div class="mt-3">
+            <input type="number" id="customAmount" placeholder="Or custom amount ($)" min="1" class="w-full bg-stone-50 border border-stone-200 focus:border-[#1e2124] px-4 py-2.5 text-xs text-[#1e2124] outline-none transition">
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <input type="text" id="donorName" required placeholder="Full Name *" class="w-full bg-stone-50 border border-stone-200 focus:border-[#1e2124] px-4 py-3 text-xs text-[#1e2124] outline-none transition">
+          <input type="email" id="donorEmail" required placeholder="Email Address *" class="w-full bg-stone-50 border border-stone-200 focus:border-[#1e2124] px-4 py-3 text-xs text-[#1e2124] outline-none transition">
+        </div>
+
+        <button type="submit" class="w-full bg-[#1e2124] hover:bg-stone-800 text-white text-xs font-bold uppercase tracking-widest py-3.5 transition shadow focus:outline-none">
+          CONFIRM DONATION
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST ================= -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 bg-[#1e2124] text-white px-6 py-4 shadow-2xl flex items-center space-x-3 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-[#fae896] text-lg"></i>
+    <span id="toastMessage" class="text-xs tracking-wide font-medium">Action completed successfully.</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    const ARTICLES = {
+      'barrierless': {
+        title: 'Barrierless Church Mission',
+        body: '<p>At Deborah, we believe physical, cognitive, and social barriers have no place in God’s house. Our building is 100% ADA compliant with tactile signage, hearing loops, quiet sensory rooms, and service animals warmly welcome.</p>'
+      },
+      'cloud': {
+        title: 'A Happy Cloud: Our Journey',
+        body: '<p>Inspired by the simplicity of joyful creation and grace, we cultivate an open community where creativity, contemplative meditation, and mutual kindness flourish daily.</p>'
+      },
+      'touch': {
+        title: 'Get In Touch with Deborah Church',
+        body: '<p>We would love to welcome you! Address: 100 Inclusive Way, New York, NY.<br>Phone: (555) 019-2831<br>Email: sanctuary@deborahchurch.org</p>'
+      },
+      'gallery': {
+        title: 'Sanctuary & Community Gallery',
+        body: '<p>View photographs of our recent community meals, all-abilities worship services, and outdoor prayer garden walks.</p>'
+      },
+      'faq': {
+        title: 'Frequently Asked Questions',
+        body: '<p><strong>Are all services captioned?</strong> Yes, live closed captions and ASL interpretation are provided every Sunday.<br><strong>What about children with sensory needs?</strong> We offer quiet spaces with soft lighting and sensory calming tools.</p>'
+      }
+    };
+
+    // Drawer
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideDrawer = document.getElementById('sideDrawer');
+    const sideDrawerBackdrop = document.getElementById('sideDrawerBackdrop');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function toggleSideDrawer(open) {
+      if (open) {
+        sideDrawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sideDrawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      }
+    }
+    if (burgerBtn) burgerBtn.addEventListener('click', () => toggleSideDrawer(true));
+    closeDrawerBtn.addEventListener('click', () => toggleSideDrawer(false));
+    sideDrawerBackdrop.addEventListener('click', () => toggleSideDrawer(false));
+    drawerLinks.forEach(l => l.addEventListener('click', () => toggleSideDrawer(false)));
+
+    // Content Modal
+    const contentModalBackdrop = document.getElementById('contentModalBackdrop');
+    const contentModalCard = document.getElementById('contentModalCard');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    function openModal(key) {
+      const data = ARTICLES[key];
+      if (!data) return;
+      modalTitle.textContent = data.title;
+      modalBody.innerHTML = data.body;
+
+      contentModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        contentModalCard.classList.remove('scale-95', 'opacity-0');
+        contentModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeContentModal() {
+      contentModalCard.classList.remove('scale-100', 'opacity-100');
+      contentModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        contentModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    contentModalBackdrop.addEventListener('click', (e) => { if (e.target === contentModalBackdrop) closeContentModal(); });
+
+    // Donation Modal
+    const donateModalBackdrop = document.getElementById('donateModalBackdrop');
+    const donateModalCard = document.getElementById('donateModalCard');
+    let currentDonationAmount = 50;
+
+    function openDonateModal() {
+      donateModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        donateModalCard.classList.remove('scale-95', 'opacity-0');
+        donateModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDonateModal() {
+      donateModalCard.classList.remove('scale-100', 'opacity-100');
+      donateModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        donateModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    donateModalBackdrop.addEventListener('click', (e) => { if (e.target === donateModalBackdrop) closeDonateModal(); });
+
+    function selectAmount(val) {
+      currentDonationAmount = val;
+      document.getElementById('customAmount').value = '';
+      document.querySelectorAll('.amt-btn').forEach(btn => {
+        if (btn.textContent.includes(val)) {
+          btn.classList.add('bg-[#fae896]');
+        } else {
+          btn.classList.remove('bg-[#fae896]');
+        }
+      });
+    }
+
+    function handleDonationSubmit(e) {
+      e.preventDefault();
+      const custom = document.getElementById('customAmount').value;
+      const amt = custom ? custom : currentDonationAmount;
+      const donor = document.getElementById('donorName').value;
+      closeDonateModal();
+      showToast(`Thank you, ${donor}! Your contribution of $${amt} supports our barrier-free mission.`);
+      document.getElementById('donationForm').reset();
+      selectAmount(50);
+    }
+
+    // Toast
+    const toastEl = document.getElementById('toastNotification');
+    const toastMsgEl = document.getElementById('toastMessage');
+    let toastTimeout;
+    function showToast(msg) {
+      clearTimeout(toastTimeout);
+      toastMsgEl.textContent = msg;
+      toastEl.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+
+    // Escape Key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeContentModal();
+        closeDonateModal();
+        toggleSideDrawer(false);
+      }
+    });
+  </script>
+
+</body>
+</html>

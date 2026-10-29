@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Nazareth Church – Religion & Community Theme</title>
+
+  <!-- Google Fonts: DM Serif Display, Plus Jakarta Sans, Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            script: ['Caveat', 'cursive'],
+          },
+          colors: {
+            nazareth: {
+              terracotta: '#b85d34',
+              terracottaDark: '#9d4a25',
+              cream: '#f7f5f0',
+              creamAlt: '#ece8df',
+              sage: '#a8a38d',
+              charcoal: '#1d1b1a',
+              text: '#6b6560',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #6b6560;
+      background-color: #f7f5f0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-script {
+      font-family: 'Caveat', cursive;
+    }
+
+    /* Decorative ring graphic behind sections */
+    .bg-ring {
+      position: absolute;
+      border-radius: 9999px;
+      border-style: solid;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#b85d34] selection:text-white relative">
+
+  <!-- ================= HEADER & NAV ================= -->
+  <header class="absolute top-0 left-0 w-full z-40 transition-all duration-300">
+    <div class="max-w-[1360px] mx-auto px-6 h-24 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex flex-col group">
+        <span class="font-serif text-2xl sm:text-3xl font-normal text-white tracking-wide">Nazareth</span>
+        <span class="font-script text-base text-[#ffcaa6] -mt-2 ml-4">Church</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-9 text-sm font-medium text-white/90">
+        <a href="#" class="hover:text-[#ffcaa6] transition-colors">Home</a>
+        <a href="#about" class="hover:text-[#ffcaa6] transition-colors">About</a>
+        <a href="#sermons" class="hover:text-[#ffcaa6] transition-colors">Connect</a>
+        <a href="#events" class="hover:text-[#ffcaa6] transition-colors">Features</a>
+        <a href="#events" class="hover:text-[#ffcaa6] transition-colors">Events</a>
+        <a href="#contacts" class="hover:text-[#ffcaa6] transition-colors">Contacts</a>
+      </nav>
+
+      <!-- Right Action & Burger (NO SHOP ICON) -->
+      <div class="flex items-center space-x-4">
+        <button onclick="openDonateModal()" class="hidden sm:inline-flex bg-white hover:bg-[#ffcaa6] text-[#1d1b1a] text-xs font-semibold px-6 py-2.5 rounded-full transition-all shadow-sm">
+          Donate
+        </button>
+        <button id="burgerBtn" class="text-white hover:text-[#ffcaa6] p-1.5 focus:outline-none lg:hidden text-2xl" aria-label="Open navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative w-full min-h-[700px] lg:min-h-[850px] bg-cover bg-center flex items-center justify-center overflow-hidden" style="background-image: url('images/hero-bg.jpg');">
+    <!-- Rich warm duotone overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#8b3d1b]/70 via-[#4a2414]/50 to-[#1f1511]/75"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center text-white relative z-10 pt-20">
+      <span class="font-script text-3xl sm:text-4xl text-[#ffcaa6] block mb-2">The Nazareth Church</span>
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-[88px] font-normal leading-[1.05] tracking-tight mb-8">
+        Welcome to Our Church
+      </h1>
+      <div class="flex justify-center">
+        <a href="#about" class="inline-flex items-center space-x-2 text-sm font-semibold tracking-wider text-white hover:text-[#ffcaa6] transition-colors group">
+          <span>I'm <strong>New Here</strong></span>
+          <i class="fa-solid fa-arrow-down text-xs group-hover:translate-y-1 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Side Floating Indicators -->
+    <div class="hidden xl:flex flex-col space-y-2 absolute right-6 top-1/2 -translate-y-1/2 z-20">
+      <div class="w-10 h-10 bg-[#b85d34] text-white flex items-center justify-center cursor-pointer hover:bg-[#9d4a25] transition"><i class="fa-solid fa-calendar text-sm"></i></div>
+      <div class="w-10 h-10 bg-[#b85d34] text-white flex items-center justify-center cursor-pointer hover:bg-[#9d4a25] transition"><i class="fa-solid fa-hands-praying text-sm"></i></div>
+      <div class="w-10 h-10 bg-[#b85d34] text-white flex items-center justify-center cursor-pointer hover:bg-[#9d4a25] transition"><i class="fa-solid fa-book-bible text-sm"></i></div>
+    </div>
+  </section>
+
+  <!-- ================= WATCH OUR LATEST SERMON ================= -->
+  <section id="about" class="relative w-full py-24 lg:py-32 overflow-hidden bg-[#f7f5f0]">
+    <!-- Decorative subtle ring -->
+    <div class="w-[500px] h-[500px] bg-ring border-[40px] border-[#ded9cd]/40 -left-48 top-12"></div>
+    <div class="w-[380px] h-[380px] bg-ring border-[30px] border-[#b85d34]/20 -left-20 top-44"></div>
+
+    <div class="max-w-[1240px] mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Video Card -->
+        <div class="lg:col-span-6 relative group cursor-pointer" onclick="openVideoModal()">
+          <div class="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] bg-stone-900">
+            <img src="images/sermon-video.jpg" alt="Watch Latest Sermon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90">
+            <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+              <span class="w-16 h-16 rounded-full bg-white text-[#b85d34] flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform pl-1">
+                <i class="fa-solid fa-play"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="lg:col-span-6">
+          <span class="font-script text-2xl sm:text-3xl text-[#b85d34] block mb-1">Sermon Video</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-[#1d1b1a] leading-tight mb-6">
+            Watch Our<br>Latest Sermon
+          </h2>
+          <p class="text-[#6b6560] text-sm sm:text-base leading-relaxed mb-8">
+            We want to welcome you to the church where you find people who worship Jesus and are passionate about spreading His Word. Salvation is a gift that you can find in Jesus by following the mission that is established in our church: it's simple and wonderful, and brings His Kingdom all over the world.
+          </p>
+          <button onclick="openVideoModal()" class="inline-flex bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold px-8 py-3.5 rounded-full transition-all shadow-md hover:shadow-lg">
+            Watch This Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LISTEN TO OUR SERMONS (PODCASTS) ================= -->
+  <section id="sermons" class="relative w-full py-20 lg:py-28 bg-[#f7f5f0] overflow-hidden">
+    <div class="w-[450px] h-[450px] bg-ring border-[36px] border-[#b85d34]/25 -right-32 top-10"></div>
+
+    <div class="max-w-[960px] mx-auto px-6 relative z-10 text-center">
+      <span class="font-script text-2xl sm:text-3xl text-[#b85d34] block mb-1">Sermon Podcasts</span>
+      <h2 class="font-serif text-4xl sm:text-5xl text-[#1d1b1a] mb-12">
+        Listen to Our<br>Sermons
+      </h2>
+
+      <!-- Audio Track 1 -->
+      <div class="bg-white rounded-xl p-5 sm:p-6 shadow-sm mb-5 text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center space-x-4 w-full sm:w-auto">
+          <div class="w-12 h-12 rounded-lg bg-[#b85d34]/10 text-[#b85d34] flex items-center justify-center text-lg flex-shrink-0">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div>
+            <span class="text-xs text-stone-400 block font-medium">Sermon by Jeremy Smith</span>
+            <h4 class="font-serif text-lg text-[#1d1b1a]">Mar 28 - A New Passover</h4>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3 w-full sm:w-auto">
+          <button onclick="toggleAudio(this)" class="w-9 h-9 rounded-full bg-[#b85d34] text-white flex items-center justify-center text-xs hover:bg-[#9d4a25] transition pl-0.5">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <div class="w-48 sm:w-64 bg-stone-200 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-[#b85d34] h-full w-1/3"></div>
+          </div>
+          <span class="text-xs text-stone-400">28:45</span>
+        </div>
+      </div>
+
+      <!-- Audio Track 2 -->
+      <div class="bg-white rounded-xl p-5 sm:p-6 shadow-sm mb-10 text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center space-x-4 w-full sm:w-auto">
+          <div class="w-12 h-12 rounded-lg bg-[#b85d34]/10 text-[#b85d34] flex items-center justify-center text-lg flex-shrink-0">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div>
+            <span class="text-xs text-stone-400 block font-medium">Sermon by Joe Turner</span>
+            <h4 class="font-serif text-lg text-[#1d1b1a]">Mar 17 - Palm Sunday Tragedy</h4>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3 w-full sm:w-auto">
+          <button onclick="toggleAudio(this)" class="w-9 h-9 rounded-full bg-[#b85d34] text-white flex items-center justify-center text-xs hover:bg-[#9d4a25] transition pl-0.5">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <div class="w-48 sm:w-64 bg-stone-200 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-[#b85d34] h-full w-2/3"></div>
+          </div>
+          <span class="text-xs text-stone-400">34:10</span>
+        </div>
+      </div>
+
+      <button onclick="openModal('podcasts')" class="inline-flex bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold px-8 py-3.5 rounded-full transition-all shadow-md">
+        More Podcasts
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= UPCOMING EVENTS / JOIN COMMUNITY ================= -->
+  <section id="events" class="relative w-full py-24 lg:py-32 bg-[#f7f5f0] overflow-hidden">
+    <div class="max-w-[1240px] mx-auto px-6 relative z-10 text-center">
+      <span class="font-script text-2xl sm:text-3xl text-[#b85d34] block mb-1">Upcoming Events</span>
+      <h2 class="font-serif text-4xl sm:text-5xl text-[#1d1b1a] mb-14">
+        Join Our Community
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-12">
+        <!-- Event 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openModal('event-breakfast')">
+            <img src="images/event-breakfast.jpg" alt="Men's Breakfast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-4 left-4 w-12 h-12 rounded-full bg-[#b85d34] text-white flex flex-col items-center justify-center text-[10px] font-bold leading-tight shadow">
+              <span class="text-xs">24</span>
+              <span>DEC</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl text-[#1d1b1a] group-hover:text-[#b85d34] transition cursor-pointer mb-2" onclick="openModal('event-breakfast')">
+              Men's Breakfast
+            </h3>
+            <p class="text-xs text-[#6b6560] leading-relaxed mb-4">
+              Gather with fellow brothers for morning fellowship, hearty pancakes, and inspirational devotion.
+            </p>
+            <button onclick="openModal('event-breakfast')" class="text-xs font-semibold text-[#b85d34] hover:underline">
+              View Details →
+            </button>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openModal('event-ladies')">
+            <img src="images/event-ladies.jpg" alt="Ladies' Night" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-4 left-4 w-12 h-12 rounded-full bg-[#b85d34] text-white flex flex-col items-center justify-center text-[10px] font-bold leading-tight shadow">
+              <span class="text-xs">16</span>
+              <span>SEP</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl text-[#1d1b1a] group-hover:text-[#b85d34] transition cursor-pointer mb-2" onclick="openModal('event-ladies')">
+              Ladies' Night
+            </h3>
+            <p class="text-xs text-[#6b6560] leading-relaxed mb-4">
+              An evening of laughter, worship, testimony, and encouragement for all women across generations.
+            </p>
+            <button onclick="openModal('event-ladies')" class="text-xs font-semibold text-[#b85d34] hover:underline">
+              View Details →
+            </button>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition group">
+          <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openModal('event-mission')">
+            <img src="images/event-mission.jpg" alt="2027 Kenya Mission Trip" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute bottom-4 left-4 w-12 h-12 rounded-full bg-[#b85d34] text-white flex flex-col items-center justify-center text-[10px] font-bold leading-tight shadow">
+              <span class="text-xs">14</span>
+              <span>JUL</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl text-[#1d1b1a] group-hover:text-[#b85d34] transition cursor-pointer mb-2" onclick="openModal('event-mission')">
+              2027 Kenya Mission Trip
+            </h3>
+            <p class="text-xs text-[#6b6560] leading-relaxed mb-4">
+              Join our international outreach team supporting local orphanages and water purification projects.
+            </p>
+            <button onclick="openModal('event-mission')" class="text-xs font-semibold text-[#b85d34] hover:underline">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="openModal('events-all')" class="inline-flex bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold px-8 py-3.5 rounded-full transition-all shadow-md">
+        More Events
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= BANNER: AT NAZARETH CHURCH ================= -->
+  <section class="relative w-full py-28 lg:py-36 bg-cover bg-center overflow-hidden flex items-center" style="background-image: url('images/banner-bg.jpg');">
+    <div class="absolute inset-0 bg-[#b85d34]/85 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center text-white relative z-10">
+      <span class="font-script text-3xl sm:text-4xl text-[#ffcaa6] block mb-2">Location</span>
+      <h2 class="font-serif text-3xl sm:text-5xl lg:text-5xl leading-snug mb-8">
+        At Nazareth Church you'll be welcomed by people who have come together to know Christ and live in his freedom.
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#contacts" class="inline-flex bg-white hover:bg-[#f7f5f0] text-[#1d1b1a] text-xs font-semibold px-8 py-3.5 rounded-full transition shadow">
+          Contacts
+        </a>
+        <button onclick="showToast('Directions sent to your location!')" class="inline-flex bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold px-8 py-3.5 rounded-full transition shadow border border-white/20">
+          Get Directions
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR MISSION ================= -->
+  <section class="relative w-full py-24 lg:py-32 bg-[#f7f5f0] overflow-hidden">
+    <div class="w-[500px] h-[500px] bg-ring border-[45px] border-[#b85d34]/20 -left-48 top-8"></div>
+
+    <div class="max-w-[1240px] mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+            <img src="images/mission-guitar.jpg" alt="Our Mission in Action" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <span class="font-script text-2xl sm:text-3xl text-[#b85d34] block mb-1">Beliefs</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-[#1d1b1a] mb-6">
+            Our Mission
+          </h2>
+          <p class="text-[#6b6560] text-sm sm:text-base leading-relaxed mb-8">
+            We are called to eat, drink, speak, think and work to the glory of God. We worship God by remembering the gospel through preaching, teaching, singing, praying and celebrating baptism and communion.
+          </p>
+          <button onclick="openModal('mission')" class="inline-flex bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold px-8 py-3.5 rounded-full transition shadow-md">
+            About Us
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMMUNITY ================= -->
+  <section class="relative w-full py-24 lg:py-32 bg-[#f7f5f0] overflow-hidden">
+    <div class="w-[450px] h-[450px] bg-ring border-[40px] border-[#ded9cd]/40 -right-36 top-12"></div>
+    <div class="w-[360px] h-[360px] bg-ring border-[30px] border-[#b85d34]/20 -right-16 top-36"></div>
+
+    <div class="max-w-[1240px] mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <span class="font-script text-2xl sm:text-3xl text-[#b85d34] block mb-1">We belong</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-[#1d1b1a] mb-6">
+            Community
+          </h2>
+          <p class="text-[#6b6560] text-sm sm:text-base leading-relaxed mb-8">
+            Community is the context for discipleship. The Christian faith is not intended to be lived in isolation; we were made for a relationship with God and for relationships with each other. We belong not merely to a church building, but to a people.
+          </p>
+          <button onclick="openModal('community')" class="inline-flex bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold px-8 py-3.5 rounded-full transition shadow-md">
+            Learn More
+          </button>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+            <img src="images/community-hands.jpg" alt="Community Prayer Circle" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SUPPORT THE MISSION (DONATE) ================= -->
+  <section class="relative w-full py-24 lg:py-32 bg-[#f7f5f0] overflow-hidden">
+    <div class="max-w-[1240px] mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <span class="font-script text-2xl sm:text-3xl text-[#b85d34] block mb-1">Donate</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-[#1d1b1a]">
+          Support the Mission
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white rounded-3xl p-8 sm:p-12 shadow-sm">
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl overflow-hidden aspect-[4/3]">
+            <img src="images/donate-hands.jpg" alt="Generosity & Giving" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <h3 class="font-serif text-2xl sm:text-3xl text-[#1d1b1a] mb-4">
+            Your generosity is making a difference
+          </h3>
+          <p class="text-sm text-[#6b6560] leading-relaxed mb-8">
+            We're here to regularly support families and children in need across our city. Thank you for walking alongside us and honoring God with your resources.
+          </p>
+
+          <div class="flex items-baseline space-x-6 mb-8">
+            <span class="font-serif text-4xl sm:text-5xl text-[#b85d34]">$50.00</span>
+            <button onclick="openDonateModal()" class="inline-flex bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold px-8 py-3.5 rounded-full transition shadow-md">
+              Donate Now
+            </button>
+          </div>
+
+          <div class="flex space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#1d1b1a]"></span>
+            <span class="w-2.5 h-2.5 rounded-full border border-stone-300"></span>
+            <span class="w-2.5 h-2.5 rounded-full border border-stone-300"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA BANNER ================= -->
+  <section class="w-full py-16 bg-[#b85d34] text-white text-center">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <h3 class="font-serif text-3xl sm:text-4xl text-left">
+        See What God Can Do Through You
+      </h3>
+      <button onclick="openModal('involved')" class="bg-white hover:bg-[#ffcaa6] text-[#1d1b1a] text-xs font-semibold px-8 py-3.5 rounded-full transition shadow whitespace-nowrap">
+        Get Involved
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contacts" class="w-full bg-[#1d1b1a] text-white/70 pt-20 pb-10 text-xs">
+    <div class="max-w-[1360px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-white/10">
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-1">
+          <div class="flex flex-col mb-4">
+            <span class="font-serif text-2xl text-white">Nazareth</span>
+            <span class="font-script text-sm text-[#ffcaa6] -mt-1 ml-3">Church</span>
+          </div>
+          <p class="leading-relaxed mb-4 text-white/60">
+            123 West 21st Street, New York, NY 10010<br>
+            Phone: (123) 456-7890
+          </p>
+          <div class="flex space-x-3 text-sm text-white">
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#b85d34] transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#b85d34] transition"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#b85d34] transition"><i class="fa-brands fa-youtube text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <ul class="space-y-2.5">
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Our Mission</a></li>
+            <li><a href="#" onclick="openDonateModal(); return false;" class="hover:text-[#ffcaa6] transition">• Donate</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Our Beliefs</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Connect</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Our Preachers</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <ul class="space-y-2.5">
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Our Events</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Gallery</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Contacts</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Give</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <ul class="space-y-2.5">
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• News & Updates</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Programs</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Mission</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Volunteers</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• For the Youth</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Sunday Gathering</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5 -->
+        <div>
+          <ul class="space-y-2.5">
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• All Events</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• City Heights Outreach</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• Sunday Gathering</a></li>
+            <li><a href="#" class="hover:text-[#ffcaa6] transition">• The Dinner Table</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 text-center text-white/40 text-[11px]">
+        AxiomThemes 2024. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE DRAWER ================= -->
+  <div id="sideDrawerBackdrop" class="fixed inset-0 bg-black/60 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="sideDrawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[360px] bg-[#1d1b1a] text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between p-8 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl text-white">Nazareth</span>
+          <span class="font-script text-sm text-[#ffcaa6] -mt-1 ml-3">Church</span>
+        </div>
+        <button id="closeDrawerBtn" class="text-white/60 hover:text-white text-2xl focus:outline-none" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col space-y-4 mb-8">
+        <span class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Navigation</span>
+        <a href="#" class="drawer-link text-sm font-medium hover:text-[#ffcaa6] transition">Home</a>
+        <a href="#about" class="drawer-link text-sm font-medium hover:text-[#ffcaa6] transition">About Us</a>
+        <a href="#sermons" class="drawer-link text-sm font-medium hover:text-[#ffcaa6] transition">Sermons & Podcasts</a>
+        <a href="#events" class="drawer-link text-sm font-medium hover:text-[#ffcaa6] transition">Community Events</a>
+        <a href="#contacts" class="drawer-link text-sm font-medium hover:text-[#ffcaa6] transition">Contact & Location</a>
+      </nav>
+
+      <div class="pt-6 border-t border-white/10">
+        <button onclick="toggleSideDrawer(false); openDonateModal();" class="w-full bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold py-3 rounded-full transition shadow mb-6">
+          Donate to Nazareth
+        </button>
+        <p class="text-xs text-white/60 leading-relaxed">
+          123 West 21st Street, New York, NY 10010<br>
+          (123) 456-7890
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= VIDEO MODAL ================= -->
+  <div id="videoModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl">
+      <button onclick="closeVideoModal()" class="absolute -top-12 right-0 text-white/80 hover:text-white text-3xl focus:outline-none transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="relative pt-[56.25%] w-full bg-black">
+        <iframe id="videoIframe" class="absolute inset-0 w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CONTENT / ARTICLE MODAL ================= -->
+  <div id="contentModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="contentModalCard" class="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl my-8 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+      <button onclick="closeContentModal()" class="absolute top-5 right-5 z-20 w-8 h-8 bg-stone-100 hover:bg-[#b85d34] hover:text-white rounded-full flex items-center justify-center text-sm transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="modalImageContainer" class="w-full h-60 bg-stone-100 overflow-hidden">
+        <img id="modalImage" src="" alt="Modal Image" class="w-full h-full object-cover">
+      </div>
+
+      <div class="p-6 sm:p-8">
+        <span class="font-script text-2xl text-[#b85d34] block mb-1" id="modalSubtitle">Event Details</span>
+        <h3 class="font-serif text-3xl text-[#1d1b1a] mb-4" id="modalTitle">Title</h3>
+        <div class="text-[#6b6560] text-sm leading-relaxed space-y-4" id="modalBody"></div>
+        <div class="mt-8 pt-6 border-t border-stone-100 flex justify-end">
+          <button onclick="closeContentModal()" class="bg-[#b85d34] text-white text-xs font-semibold px-6 py-2.5 rounded-full hover:bg-[#9d4a25] transition">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DONATION MODAL ================= -->
+  <div id="donateModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="donateModalCard" class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl p-6 sm:p-10 transform scale-95 opacity-0 transition-all duration-300 my-8">
+      <button onclick="closeDonateModal()" class="absolute top-5 right-5 text-stone-400 hover:text-[#1d1b1a] text-2xl transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <span class="font-script text-2xl text-[#b85d34] block mb-1">Make an Impact</span>
+      <h3 class="font-serif text-3xl text-[#1d1b1a] mb-6">Support Nazareth Church</h3>
+
+      <form id="donationForm" onsubmit="handleDonationSubmit(event)" class="space-y-5">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-2.5">Select Amount (USD)</label>
+          <div class="grid grid-cols-4 gap-2.5">
+            <button type="button" onclick="selectAmount(15)" class="amt-btn border border-stone-200 py-2.5 text-xs font-semibold rounded-xl text-[#1d1b1a] transition focus:outline-none">$15</button>
+            <button type="button" onclick="selectAmount(50)" class="amt-btn border border-stone-200 py-2.5 text-xs font-semibold rounded-xl text-[#1d1b1a] transition focus:outline-none bg-[#b85d34] text-white">$50</button>
+            <button type="button" onclick="selectAmount(100)" class="amt-btn border border-stone-200 py-2.5 text-xs font-semibold rounded-xl text-[#1d1b1a] transition focus:outline-none">$100</button>
+            <button type="button" onclick="selectAmount(250)" class="amt-btn border border-stone-200 py-2.5 text-xs font-semibold rounded-xl text-[#1d1b1a] transition focus:outline-none">$250</button>
+          </div>
+          <div class="mt-3">
+            <input type="number" id="customAmount" placeholder="Or enter custom amount ($)" min="1" class="w-full bg-[#f7f5f0] border border-transparent focus:border-[#b85d34] px-4 py-2.5 text-xs text-[#1d1b1a] rounded-xl outline-none transition">
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <input type="text" id="donorName" required placeholder="Full Name *" class="w-full bg-[#f7f5f0] border border-transparent focus:border-[#b85d34] px-4 py-3 text-xs text-[#1d1b1a] rounded-xl outline-none transition">
+          <input type="email" id="donorEmail" required placeholder="Email Address *" class="w-full bg-[#f7f5f0] border border-transparent focus:border-[#b85d34] px-4 py-3 text-xs text-[#1d1b1a] rounded-xl outline-none transition">
+        </div>
+
+        <button type="submit" class="w-full bg-[#b85d34] hover:bg-[#9d4a25] text-white text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full transition shadow-md focus:outline-none">
+          Confirm Giving
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST ================= -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 bg-[#1d1b1a] text-white px-6 py-4 rounded-xl shadow-2xl flex items-center space-x-3 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-[#b85d34] text-lg"></i>
+    <span id="toastMessage" class="text-xs font-sans tracking-wide">Thank you! Your donation has been recorded.</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    const ARTICLES = {
+      'event-breakfast': {
+        title: "Men's Breakfast",
+        subtitle: 'Monthly Fellowship',
+        image: 'images/event-breakfast.jpg',
+        body: '<p>Join the men of Nazareth Church for our monthly morning breakfast fellowship. We meet at 8:00 AM in the church hall for prayer, discussion on biblical leadership, and delicious home-cooked pancakes and coffee.</p>'
+      },
+      'event-ladies': {
+        title: "Ladies' Night",
+        subtitle: 'Encouragement & Worship',
+        image: 'images/event-ladies.jpg',
+        body: '<p>A beautiful evening dedicated to worship, encouraging testimonies, and fellowship for women of all ages. Bring a friend or neighbor for refreshments, laughter, and spiritual replenishment.</p>'
+      },
+      'event-mission': {
+        title: "2027 Kenya Mission Trip",
+        subtitle: 'Global Outreach',
+        image: 'images/event-mission.jpg',
+        body: '<p>Our upcoming mission team will partner with schools and community health clinics in rural Kenya. Informational meetings and preparation seminars take place every second Sunday after service.</p>'
+      },
+      'mission': {
+        title: 'Our Sacred Mission',
+        subtitle: 'Beliefs & Creed',
+        image: 'images/mission-guitar.jpg',
+        body: '<p>At Nazareth Church, we exist to glorify God by knowing Christ, growing in grace, and demonstrating His self-giving love through humble service to our city and the nations.</p>'
+      },
+      'community': {
+        title: 'We Belong to One Another',
+        subtitle: 'Discipleship & Community',
+        image: 'images/community-hands.jpg',
+        body: '<p>Authentic discipleship happens around dinner tables, in prayer circles, and through shared acts of mercy. We invite you to join one of our neighborhood small groups meeting weekly across the city.</p>'
+      },
+      'involved': {
+        title: 'Get Involved at Nazareth',
+        subtitle: 'Serve & Connect',
+        image: 'images/community-hands.jpg',
+        body: '<p>Whether serving on our worship team, assisting with children’s ministry, helping at the weekly food pantry, or joining the media crew—there is a place for your gifts here.</p>'
+      },
+      'podcasts': {
+        title: 'Nazareth Sermon Podcasts',
+        subtitle: 'Audio Archive',
+        image: '',
+        body: '<p>Stream our full library of Sunday messages, midweek Bible studies, and guest preacher lectures on Apple Podcasts, Spotify, or directly from our online archive.</p>'
+      },
+      'events-all': {
+        title: 'Nazareth Events Calendar',
+        subtitle: 'Upcoming Gatherings',
+        image: '',
+        body: '<p>View our full seasonal calendar of prayer retreats, youth camps, marriage workshops, and community festivals. Join us in fellowship!</p>'
+      }
+    };
+
+    // Mobile Drawer
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideDrawer = document.getElementById('sideDrawer');
+    const sideDrawerBackdrop = document.getElementById('sideDrawerBackdrop');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function toggleSideDrawer(open) {
+      if (open) {
+        sideDrawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sideDrawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      }
+    }
+    burgerBtn.addEventListener('click', () => toggleSideDrawer(true));
+    closeDrawerBtn.addEventListener('click', () => toggleSideDrawer(false));
+    sideDrawerBackdrop.addEventListener('click', () => toggleSideDrawer(false));
+    drawerLinks.forEach(l => l.addEventListener('click', () => toggleSideDrawer(false)));
+
+    // Video Modal
+    const videoModal = document.getElementById('videoModal');
+    const videoIframe = document.getElementById('videoIframe');
+    function openVideoModal() {
+      videoIframe.src = "https://player.vimeo.com/video/96728225?autoplay=1";
+      videoModal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVideoModal() {
+      videoIframe.src = "";
+      videoModal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+    videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideoModal(); });
+
+    // Content Modal
+    const contentModalBackdrop = document.getElementById('contentModalBackdrop');
+    const contentModalCard = document.getElementById('contentModalCard');
+    const modalImageContainer = document.getElementById('modalImageContainer');
+    const modalImage = document.getElementById('modalImage');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    function openModal(key) {
+      const data = ARTICLES[key];
+      if (!data) return;
+      if (data.image) {
+        modalImageContainer.classList.remove('hidden');
+        modalImage.src = data.image;
+      } else {
+        modalImageContainer.classList.add('hidden');
+      }
+      modalSubtitle.textContent = data.subtitle;
+      modalTitle.textContent = data.title;
+      modalBody.innerHTML = data.body;
+
+      contentModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        contentModalCard.classList.remove('scale-95', 'opacity-0');
+        contentModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeContentModal() {
+      contentModalCard.classList.remove('scale-100', 'opacity-100');
+      contentModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        contentModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    contentModalBackdrop.addEventListener('click', (e) => { if (e.target === contentModalBackdrop) closeContentModal(); });
+
+    // Donation Modal
+    const donateModalBackdrop = document.getElementById('donateModalBackdrop');
+    const donateModalCard = document.getElementById('donateModalCard');
+    let currentDonationAmount = 50;
+
+    function openDonateModal() {
+      donateModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        donateModalCard.classList.remove('scale-95', 'opacity-0');
+        donateModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDonateModal() {
+      donateModalCard.classList.remove('scale-100', 'opacity-100');
+      donateModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        donateModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    donateModalBackdrop.addEventListener('click', (e) => { if (e.target === donateModalBackdrop) closeDonateModal(); });
+
+    function selectAmount(val) {
+      currentDonationAmount = val;
+      document.getElementById('customAmount').value = '';
+      document.querySelectorAll('.amt-btn').forEach(btn => {
+        if (btn.textContent.includes(val)) {
+          btn.classList.add('bg-[#b85d34]', 'text-white');
+        } else {
+          btn.classList.remove('bg-[#b85d34]', 'text-white');
+        }
+      });
+    }
+
+    function handleDonationSubmit(e) {
+      e.preventDefault();
+      const custom = document.getElementById('customAmount').value;
+      const amt = custom ? custom : currentDonationAmount;
+      const donor = document.getElementById('donorName').value;
+      closeDonateModal();
+      showToast(`Blessings, ${donor}! Your contribution of $${amt} was recorded.`);
+      document.getElementById('donationForm').reset();
+      selectAmount(50);
+    }
+
+    function toggleAudio(btn) {
+      const icon = btn.querySelector('i');
+      if (icon.classList.contains('fa-play')) {
+        icon.classList.replace('fa-play', 'fa-pause');
+        showToast('Playing sermon audio stream...');
+      } else {
+        icon.classList.replace('fa-pause', 'fa-play');
+        showToast('Audio paused.');
+      }
+    }
+
+    // Toast
+    const toastEl = document.getElementById('toastNotification');
+    const toastMsgEl = document.getElementById('toastMessage');
+    let toastTimeout;
+    function showToast(msg) {
+      clearTimeout(toastTimeout);
+      toastMsgEl.textContent = msg;
+      toastEl.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+
+    // Escape Key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeContentModal();
+        closeDonateModal();
+        closeVideoModal();
+        toggleSideDrawer(false);
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapel – Church Theme</title>
+
+  <!-- Google Fonts: Montserrat, Noto Serif, Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            serif: ['"Noto Serif"', 'serif'],
+            script: ['Cervanttis', 'cursive'],
+            roboto: ['Roboto', 'sans-serif'],
+          },
+          colors: {
+            chapel: {
+              dark: '#29191a',
+              text: '#8a8080',
+              accent: '#ba9d77',
+              accentHover: '#a0835f',
+              accentLight: '#ffeadc',
+              gold: '#c59a8e',
+              bgLight: '#faf6f4',
+              inputBg: '#fcf8f6',
+              line: '#e2dad5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'Cervanttis';
+      src: url('./fonts/Cervanttis.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #8a8080;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .font-cervanttis {
+      font-family: 'Cervanttis', cursive;
+    }
+
+    .vertical-date-badge {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      padding: 0 12px 0 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #29191a;
+      background-color: #f8f4f2;
+      z-index: 10;
+      transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+      transform-origin: center center;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+
+    .group:hover .vertical-date-badge {
+      background-color: #29191a;
+      color: #ffffff;
+    }
+
+    .slider-nav-num {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 20;
+      transition: transform 0.2s ease;
+    }
+    .slider-nav-num:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+    .slider-nav-num span.num {
+      display: block;
+      font-family: 'Noto Serif', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: #c59a8e;
+      margin-bottom: 2px;
+    }
+    .slider-nav-num span.bar {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #29191a;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#ba9d77] selection:text-white">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="w-full bg-white border-b border-stone-100 text-[11px] text-[#29191a]">
+    <div class="max-w-[1300px] mx-auto px-4 sm:px-6 h-11 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="font-normal tracking-[0.05em] text-[#29191a]">Follow Us</span>
+        <div class="flex items-center space-x-3 ml-2">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-[#29191a] hover:text-[#ba9d77] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-[#29191a] hover:text-[#ba9d77] transition-colors"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-[#29191a] hover:text-[#ba9d77] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 text-[#b7b2a5]">
+        <i class="fa-solid fa-phone text-[10px]"></i>
+        <a href="tel:+000123456789" class="font-sans text-[11px] text-[#b7b2a5] hover:text-[#29191a] transition-colors tracking-wide">
+          Call us <span class="font-medium">+000 123 456 789</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="w-full bg-white sticky top-0 z-40 shadow-sm">
+    <div class="max-w-[1300px] mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between">
+      <a href="#" class="inline-block flex-shrink-0 group">
+        <img src="images/logo-dark.svg" alt="Chapel Theme" class="h-11 sm:h-12 w-auto object-contain transition-opacity group-hover:opacity-90">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-8 xl:space-x-10">
+        <a href="#" class="text-[13px] font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-[0.18em] transition-colors">HOME</a>
+        <a href="#services" class="text-[13px] font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-[0.18em] transition-colors">PAGES</a>
+        <a href="#donation" class="text-[13px] font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-[0.18em] transition-colors">DONATIONS</a>
+        <a href="#events" class="text-[13px] font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-[0.18em] transition-colors">EVENTS</a>
+        <a href="#blog" class="text-[13px] font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-[0.18em] transition-colors">BLOG</a>
+        <a href="#contact" class="text-[13px] font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-[0.18em] transition-colors">CONTACT</a>
+      </nav>
+
+      <!-- Action Icons (Search & Burger - NO SHOP ICON) -->
+      <div class="flex items-center space-x-5 text-[#29191a]">
+        <button id="searchBtn" class="hover:text-[#ba9d77] transition-colors p-1 focus:outline-none" aria-label="Search">
+          <svg class="w-4 h-4" viewBox="0 0 14.921 15.411" fill="none" stroke="currentColor" stroke-width="1.6">
+            <line stroke-miterlimit="10" x1="4.634" x2="0.354" y1="10.779" y2="15.058"></line>
+            <circle cx="8.64" cy="6.281" r="5.781" stroke-miterlimit="10"></circle>
+          </svg>
+        </button>
+        <button id="burgerBtn" class="hover:text-[#ba9d77] transition-colors p-1 focus:outline-none" aria-label="Menu">
+          <svg class="w-5 h-3.5" viewBox="22.782 15.696 20.024 10.969" stroke="currentColor" stroke-width="1.7">
+            <line x1="22.782" x2="42.807" y1="16.196" y2="16.196"></line>
+            <line x1="22.782" x2="42.807" y1="21.189" y2="21.189"></line>
+            <line x1="22.782" x2="42.807" y1="26.183" y2="26.183"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SLIDER ================= -->
+  <section class="relative w-full min-h-[640px] lg:min-h-[760px] bg-cover bg-center overflow-hidden flex flex-col justify-between" style="background-image: url('images/hero-bg.jpg');">
+    <div class="absolute inset-0 bg-black/35"></div>
+
+    <!-- Hero Content -->
+    <div class="max-w-[1300px] w-full mx-auto px-6 pt-28 lg:pt-36 relative z-10">
+      <div class="max-w-2xl">
+        <p class="font-serif italic text-xl text-[#ffeadc] mb-2 tracking-wide">Church Theme</p>
+        <h1 class="font-sans uppercase font-medium text-white text-4xl sm:text-5xl lg:text-[62px] leading-[1.08] tracking-[4px] mb-6 drop-shadow-sm">
+          JOIN THE PRAYER
+        </h1>
+        <p class="text-white/90 font-sans text-sm sm:text-base leading-relaxed max-w-xl mb-8">
+          Visit your local church and become a part of the flock by contributing to the community in any way you possibly can.
+        </p>
+        <button onclick="openModal('hero')" class="inline-flex items-center justify-center bg-white text-[#29191a] text-xs font-semibold uppercase tracking-[0.18em] px-8 py-4 hover:bg-[#faf6f4] transition shadow-md focus:outline-none">
+          — &nbsp;SEE MORE
+        </button>
+      </div>
+    </div>
+
+    <!-- 3 Callout Cards along bottom of hero -->
+    <div class="relative z-10 w-full bg-gradient-to-t from-black/80 to-transparent pt-12 pb-8">
+      <div class="max-w-[1300px] mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white border-t border-white/20 pt-6">
+          <div class="flex items-start space-x-4">
+            <span class="font-serif italic text-2xl text-[#ba9d77]">01</span>
+            <div>
+              <h4 class="font-sans uppercase font-bold text-sm tracking-widest mb-1">THE BIBLE</h4>
+              <p class="text-xs text-white/70 leading-relaxed">Discover truth and wisdom in daily scripture study.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <span class="font-serif italic text-2xl text-[#ba9d77]">02</span>
+            <div>
+              <h4 class="font-sans uppercase font-bold text-sm tracking-widest mb-1">PLACE TO PRAY</h4>
+              <p class="text-xs text-white/70 leading-relaxed">A sanctuary open for communion, prayer, and quiet repose.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <span class="font-serif italic text-2xl text-[#ba9d77]">03</span>
+            <div>
+              <h4 class="font-sans uppercase font-bold text-sm tracking-widest mb-1">COMMUNITY EVENTS</h4>
+              <p class="text-xs text-white/70 leading-relaxed">Fellowship meals, volunteer services, and family retreats.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR LATEST SERVICES ================= -->
+  <section id="services" class="w-full bg-white py-24 lg:py-32">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Watch our services online</span>
+        <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a]">
+          OUR LATEST SERVICES
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Card 1 -->
+        <div class="group">
+          <div class="overflow-hidden mb-6 bg-stone-100 cursor-pointer" onclick="openModal('tour')">
+            <img src="images/service-tour.jpg" alt="Tour The Chapel" class="w-full h-[260px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <h3 class="font-sans uppercase font-bold text-lg tracking-[0.08em] text-[#29191a] mb-3 group-hover:text-[#ba9d77] transition-colors cursor-pointer" onclick="openModal('tour')">
+            TOUR THE CHAPEL
+          </h3>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] mb-5">
+            Lorem ipsum dolor sit amet, quo tantas pertinax postulant ex. Facete mentitum nominavi id vis, quo ipsum graece at.
+          </p>
+          <button onclick="openModal('tour')" class="inline-block text-[#29191a] text-xs font-semibold uppercase tracking-[0.18em] hover:text-[#ba9d77] transition-colors focus:outline-none">
+            — &nbsp;SEE MORE
+          </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group">
+          <div class="overflow-hidden mb-6 bg-stone-100 cursor-pointer" onclick="openModal('weddings')">
+            <img src="images/service-wedding.jpg" alt="Chapel Weddings" class="w-full h-[260px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <h3 class="font-sans uppercase font-bold text-lg tracking-[0.08em] text-[#29191a] mb-3 group-hover:text-[#ba9d77] transition-colors cursor-pointer" onclick="openModal('weddings')">
+            CHAPEL WEDDINGS
+          </h3>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] mb-5">
+            Lorem ipsum dolor sit amet, quo tantas pertinax postulant ex. Facete mentitum nominavi id vis, quo ipsum graece at.
+          </p>
+          <button onclick="openModal('weddings')" class="inline-block text-[#29191a] text-xs font-semibold uppercase tracking-[0.18em] hover:text-[#ba9d77] transition-colors focus:outline-none">
+            — &nbsp;SEE MORE
+          </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group">
+          <div class="overflow-hidden mb-6 bg-stone-100 cursor-pointer" onclick="openModal('events-service')">
+            <img src="images/service-events.jpg" alt="Special Events" class="w-full h-[260px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <h3 class="font-sans uppercase font-bold text-lg tracking-[0.08em] text-[#29191a] mb-3 group-hover:text-[#ba9d77] transition-colors cursor-pointer" onclick="openModal('events-service')">
+            SPECIAL EVENTS
+          </h3>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] mb-5">
+            Lorem ipsum dolor sit amet, quo tantas pertinax postulant ex. Facete mentitum nominavi id vis, quo ipsum graece at.
+          </p>
+          <button onclick="openModal('events-service')" class="inline-block text-[#29191a] text-xs font-semibold uppercase tracking-[0.18em] hover:text-[#ba9d77] transition-colors focus:outline-none">
+            — &nbsp;SEE MORE
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR WORK ================= -->
+  <section class="w-full bg-[#faf6f4] py-24 lg:py-32">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6">
+          <img src="images/our-work.jpg" alt="Our Work in Community" class="w-full h-auto rounded-none shadow-md object-cover">
+        </div>
+        <div class="lg:col-span-6">
+          <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Where to find us</span>
+          <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a] mb-6">
+            OUR WORK
+          </h2>
+          <p class="text-[#8a8080] font-sans text-[15px] leading-[26px] mb-6">
+            Lorem ipsum dolor sit amet, consectetur elit sed do eiusmod tempor incididunt labore. Eu vim atqui ludus petentium, suas idque est id. Ne veniam oblique propriae vim, dicant. Sed everti utroque, vis ea oblique pertinax con.
+          </p>
+          <div class="space-y-3 mb-8 text-sm text-[#29191a]">
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-check text-[#ba9d77]"></i>
+              <span>Compassionate outreach to local families and youth</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-check text-[#ba9d77]"></i>
+              <span>Weekly food bank distribution and community dinners</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-check text-[#ba9d77]"></i>
+              <span>Spiritual care, counseling, and home visitations</span>
+            </div>
+          </div>
+          <button onclick="openModal('work')" class="bg-[#20201c] text-white text-xs font-semibold uppercase tracking-[0.18em] px-8 py-4 hover:bg-[#ba9d77] transition shadow-sm focus:outline-none">
+            — &nbsp;READ MORE
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= UPCOMING EVENTS SECTION ================= -->
+  <section id="events" class="w-full bg-white py-24 lg:py-32">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="mb-14">
+        <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Where to find us</span>
+        <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a]">
+          UPCOMING EVENTS
+        </h2>
+      </div>
+      <p class="text-[#8a8080] font-sans text-[15px]">
+        Sorry, no posts matched your criteria.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= LATEST SERMONS ================= -->
+  <section class="w-full bg-[#faf6f4] py-24 lg:py-32">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Watch our services online</span>
+        <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a]">
+          OUR LATEST SERMONS
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Sermon 1 -->
+        <div class="bg-white p-6 shadow-sm group">
+          <div class="relative overflow-hidden mb-6 bg-stone-100">
+            <img src="images/sermon-1.jpg" alt="Holiday Spirit" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+            <button onclick="openVideoModal()" class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors" aria-label="Play sermon">
+              <span class="w-12 h-12 rounded-full bg-white text-[#29191a] flex items-center justify-center text-sm shadow pl-0.5"><i class="fa-solid fa-play"></i></span>
+            </button>
+          </div>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-1">Church · Holiday</span>
+          <h3 class="font-sans uppercase font-bold text-lg text-[#29191a] mb-2 cursor-pointer hover:text-[#ba9d77] transition" onclick="openModal('sermon-1')">HOLIDAY SPIRIT</h3>
+          <p class="text-xs text-[#8a8080] mb-4">Speaker: Walter Spencer</p>
+          <button onclick="openModal('sermon-1')" class="text-xs font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-wider">— SEE DETAILS</button>
+        </div>
+
+        <!-- Sermon 2 -->
+        <div class="bg-white p-6 shadow-sm group">
+          <div class="relative overflow-hidden mb-6 bg-stone-100">
+            <img src="images/sermon-2.jpg" alt="Living In Faith" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+            <button onclick="openVideoModal()" class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors" aria-label="Play sermon">
+              <span class="w-12 h-12 rounded-full bg-white text-[#29191a] flex items-center justify-center text-sm shadow pl-0.5"><i class="fa-solid fa-play"></i></span>
+            </button>
+          </div>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-1">Faith · Fellowship</span>
+          <h3 class="font-sans uppercase font-bold text-lg text-[#29191a] mb-2 cursor-pointer hover:text-[#ba9d77] transition" onclick="openModal('sermon-2')">LIVING IN FAITH</h3>
+          <p class="text-xs text-[#8a8080] mb-4">Speaker: Diane Foster</p>
+          <button onclick="openModal('sermon-2')" class="text-xs font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-wider">— SEE DETAILS</button>
+        </div>
+
+        <!-- Sermon 3 -->
+        <div class="bg-white p-6 shadow-sm group">
+          <div class="relative overflow-hidden mb-6 bg-stone-100">
+            <img src="images/sermon-3.jpg" alt="Grace & Mercy" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+            <button onclick="openVideoModal()" class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors" aria-label="Play sermon">
+              <span class="w-12 h-12 rounded-full bg-white text-[#29191a] flex items-center justify-center text-sm shadow pl-0.5"><i class="fa-solid fa-play"></i></span>
+            </button>
+          </div>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-1">Grace · Sunday Service</span>
+          <h3 class="font-sans uppercase font-bold text-lg text-[#29191a] mb-2 cursor-pointer hover:text-[#ba9d77] transition" onclick="openModal('sermon-3')">GRACE & MERCY</h3>
+          <p class="text-xs text-[#8a8080] mb-4">Speaker: Marcus Vance</p>
+          <button onclick="openModal('sermon-3')" class="text-xs font-semibold text-[#29191a] hover:text-[#ba9d77] uppercase tracking-wider">— SEE DETAILS</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAKE A DONATION SECTION ================= -->
+  <section id="donation" class="w-full bg-white overflow-hidden">
+    <div class="flex flex-col lg:flex-row items-stretch">
+      <div class="w-full lg:w-[59%] relative min-h-[420px] sm:min-h-[540px] lg:min-h-[640px] bg-cover bg-center" style="background-image: url('images/donation-pews.jpg');">
+        <div class="slider-nav-num left-6">
+          <span class="num">2</span>
+          <span class="bar"></span>
+        </div>
+        <div class="slider-nav-num right-6">
+          <span class="num">1</span>
+          <span class="bar"></span>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-[41%] flex items-center bg-white px-6 sm:px-12 lg:px-16 py-20 lg:py-24">
+        <div class="max-w-lg">
+          <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Where to find us</span>
+          <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a] mb-6">
+            MAKE A DONATION
+          </h2>
+          <p class="text-[#8a8080] font-sans text-[15px] leading-[26px] mb-9">
+            Dolor sit amet, consectetur adipiscing elit, sed do eiusmo tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+          </p>
+          <button onclick="openDonateModal()" class="inline-flex items-center space-x-3 bg-[#20201c] text-white text-xs font-semibold uppercase tracking-[0.18em] px-9 py-4 hover:bg-[#ba9d77] transition">
+            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 42.976 42.201" fill="currentColor">
+              <path d="M1,34.826c-0.237,0-0.476-0.084-0.667-0.255c-0.412-0.369-0.446-1.001-0.078-1.412 c0.653-0.729,6.479-7.122,10.024-7.167c3.222-0.031,13.798,0.681,14.248,0.711c1.505,0.072,4.39,0.985,4.39,3.914 c0,1.001-0.348,1.854-1.007,2.464c-1.249,1.158-3.148,1.049-3.361,1.033l-7.324,0.128c-0.006,0-0.012,0-0.018,0 c-0.544,0-0.99-0.437-1-0.983c-0.009-0.552,0.431-1.007,0.983-1.017l7.417-0.125c0.43,0.022,1.429-0.021,1.947-0.507 c0.156-0.146,0.362-0.407,0.362-0.993c0-1.727-2.253-1.903-2.51-1.917c-0.126-0.009-10.962-0.749-14.102-0.708 c-2.015,0.025-6.319,4.001-8.56,6.501C1.547,34.714,1.274,34.826,1,34.826z"></path>
+              <path d="M5.605,42.201c-0.275,0-0.549-0.113-0.747-0.334c-0.368-0.412-0.332-1.045,0.081-1.412 c2.897-2.584,4.353-2.875,4.925-2.88l14.515-0.409l13.499-7.344c1.06-0.507,2.772-1.641,3.063-2.627 c0.071-0.244,0.041-0.446-0.102-0.676c-0.956-1.543-2.477-0.72-2.646-0.622l-7.188,3.534c-0.497,0.241-1.095,0.039-1.338-0.457 c-0.244-0.495-0.039-1.095,0.457-1.338l7.125-3.5c1.279-0.75,3.813-1.052,5.29,1.328c0.442,0.712,0.553,1.506,0.32,2.296 c-0.636,2.159-3.725,3.678-4.074,3.844l-13.87,7.548L9.838,39.577c-0.144,0.025-1.218,0.274-3.568,2.37 C6.08,42.117,5.842,42.201,5.605,42.201z"></path>
+              <path d="M21.994,23.593c-0.314,0-0.546-0.073-0.689-0.217l-0.149-0.082l-0.046-0.067 c-0.175-0.155-0.52-0.461-1.252-1.133c-0.885-0.81-2.188-2.093-3.871-3.815c-1.687-1.722-3.343-3.508-4.924-5.312 c-1.117-1.224-1.809-2.598-2.059-4.085c-0.251-1.488-0.069-2.97,0.541-4.405c0.609-1.36,1.526-2.459,2.726-3.265 C13.467,0.408,14.763,0,16.12,0c2.47,0,4.322,0.827,5.661,2.527l0.157,0.2l0.157-0.2C23.435,0.827,25.286,0,27.757,0 c1.355,0,2.651,0.408,3.851,1.212c1.2,0.807,2.117,1.906,2.727,3.269c0.608,1.431,0.79,2.913,0.54,4.401 c-0.251,1.489-0.925,2.863-2.003,4.084c-3.383,3.786-6.79,7.267-10.126,10.348C22.527,23.506,22.294,23.593,21.994,23.593z"></path>
+            </svg>
+            <span>DONATE</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR TEAM (WE BUILD HOPE) ================= -->
+  <section class="w-full bg-[#faf6f4] py-24 lg:py-32">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Our team members</span>
+        <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a]">
+          WE BUILD HOPE
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Team 1 -->
+        <div class="bg-white p-6 shadow-sm text-center group">
+          <img src="images/pastor-walter.jpg" alt="Walter Spencer" class="w-48 h-48 mx-auto rounded-full object-cover mb-6 group-hover:scale-105 transition duration-300">
+          <h3 class="font-sans uppercase font-bold text-lg text-[#29191a] mb-1">WALTER SPENCER</h3>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-4">Lead Pastor</span>
+          <p class="text-xs text-[#8a8080] leading-relaxed mb-6">Lorem ipsum dolor sit amet, co secte penatibus ullamcorp, id.</p>
+          <div class="flex justify-center space-x-3 text-xs text-[#29191a]">
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Team 2 -->
+        <div class="bg-white p-6 shadow-sm text-center group">
+          <img src="images/pastor-diane.jpg" alt="Diane Foster" class="w-48 h-48 mx-auto rounded-full object-cover mb-6 group-hover:scale-105 transition duration-300">
+          <h3 class="font-sans uppercase font-bold text-lg text-[#29191a] mb-1">DIANE FOSTER</h3>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-4">Pastor</span>
+          <p class="text-xs text-[#8a8080] leading-relaxed mb-6">Lorem ipsum dolor sit amet, co secte penatibus ullamcorp, id.</p>
+          <div class="flex justify-center space-x-3 text-xs text-[#29191a]">
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Team 3 -->
+        <div class="bg-white p-6 shadow-sm text-center group">
+          <img src="images/pastor-marcus.jpg" alt="Marcus Vance" class="w-48 h-48 mx-auto rounded-full object-cover mb-6 group-hover:scale-105 transition duration-300">
+          <h3 class="font-sans uppercase font-bold text-lg text-[#29191a] mb-1">MARCUS VANCE</h3>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-4">Youth Ministry</span>
+          <p class="text-xs text-[#8a8080] leading-relaxed mb-6">Lorem ipsum dolor sit amet, co secte penatibus ullamcorp, id.</p>
+          <div class="flex justify-center space-x-3 text-xs text-[#29191a]">
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:text-[#ba9d77]"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="w-full bg-white py-28 relative overflow-hidden">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="text-center mb-12 select-none relative">
+        <div class="text-5xl font-serif text-[#d8c8bf] leading-none mb-0">”</div>
+        <div class="font-cervanttis text-5xl sm:text-6xl text-[#d8c8bf] -mt-5 lowercase">
+          testimonials
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div class="flex flex-col items-center">
+          <img src="images/testimonial-1.png" alt="Testimonial" class="w-[75px] h-[75px] rounded-full object-cover mb-6">
+          <h4 class="font-sans uppercase font-bold text-[15px] tracking-[0.14em] text-[#29191a] mb-1">SARAH CONWAY</h4>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-5">Congregation Member</span>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] max-w-xs">
+            Sagittis vitae et leo duis. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit.
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="images/testimonial-2.png" alt="Testimonial" class="w-[75px] h-[75px] rounded-full object-cover mb-6">
+          <h4 class="font-sans uppercase font-bold text-[15px] tracking-[0.14em] text-[#29191a] mb-1">DIXIE PADILLA</h4>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-5">Lead Pastor</span>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] max-w-xs">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="images/testimonial-3.png" alt="Testimonial" class="w-[75px] h-[75px] rounded-full object-cover mb-6">
+          <h4 class="font-sans uppercase font-bold text-[15px] tracking-[0.14em] text-[#29191a] mb-1">JOHNNY KELLER</h4>
+          <span class="font-serif italic text-xs text-[#ba9d77] block mb-5">Lead Pastor</span>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] max-w-xs">
+            Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LATEST FROM OUR BLOG ================= -->
+  <section id="blog" class="w-full bg-[#faf6f4] py-24 lg:py-32">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Latest from our blog</span>
+        <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a]">
+          WE BUILD HOPE
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Blog 1 -->
+        <div class="group">
+          <div class="relative overflow-hidden mb-6 bg-stone-100 cursor-pointer" onclick="openModal('blog-1')">
+            <span class="vertical-date-badge">18.08.2019.</span>
+            <img src="images/blog-1.jpg" alt="Aenean imperdiet" class="w-full h-[260px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="mb-3 text-xs">
+            <span class="font-serif italic text-[#ba9d77]">Faith, Hope</span>
+            <span class="font-sans text-[#8a8080] ml-1">by Walter Spencer</span>
+          </div>
+          <h3 class="font-sans uppercase font-bold text-lg tracking-[0.08em] text-[#29191a] mb-3 group-hover:text-[#ba9d77] transition-colors cursor-pointer" onclick="openModal('blog-1')">
+            PRAY FOR PEACE
+          </h3>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] mb-5">
+            Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+          </p>
+          <button onclick="openModal('blog-1')" class="inline-block text-[#29191a] text-xs font-semibold uppercase tracking-[0.18em] hover:text-[#ba9d77] transition-colors focus:outline-none">
+            — &nbsp;SEE MORE
+          </button>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="group">
+          <div class="relative overflow-hidden mb-6 bg-stone-100 cursor-pointer" onclick="openModal('blog-2')">
+            <span class="vertical-date-badge">14.08.2019.</span>
+            <img src="images/blog-2.jpg" alt="Living in Faith" class="w-full h-[260px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="mb-3 text-xs">
+            <span class="font-serif italic text-[#ba9d77]">Scripture, Daily</span>
+            <span class="font-sans text-[#8a8080] ml-1">by Diane Foster</span>
+          </div>
+          <h3 class="font-sans uppercase font-bold text-lg tracking-[0.08em] text-[#29191a] mb-3 group-hover:text-[#ba9d77] transition-colors cursor-pointer" onclick="openModal('blog-2')">
+            ALWAYS SAY PRAYER
+          </h3>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] mb-5">
+            Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+          </p>
+          <button onclick="openModal('blog-2')" class="inline-block text-[#29191a] text-xs font-semibold uppercase tracking-[0.18em] hover:text-[#ba9d77] transition-colors focus:outline-none">
+            — &nbsp;SEE MORE
+          </button>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="group">
+          <div class="relative overflow-hidden mb-6 bg-stone-100 cursor-pointer" onclick="openModal('blog-3')">
+            <span class="vertical-date-badge">10.08.2019.</span>
+            <img src="images/blog-3.jpg" alt="Community Action" class="w-full h-[260px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="mb-3 text-xs">
+            <span class="font-serif italic text-[#ba9d77]">Community, Life</span>
+            <span class="font-sans text-[#8a8080] ml-1">by Marcus Vance</span>
+          </div>
+          <h3 class="font-sans uppercase font-bold text-lg tracking-[0.08em] text-[#29191a] mb-3 group-hover:text-[#ba9d77] transition-colors cursor-pointer" onclick="openModal('blog-3')">
+            FIND YOUR FAITH
+          </h3>
+          <p class="text-[#8a8080] font-sans text-sm leading-[25px] mb-5">
+            Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+          </p>
+          <button onclick="openModal('blog-3')" class="inline-block text-[#29191a] text-xs font-semibold uppercase tracking-[0.18em] hover:text-[#ba9d77] transition-colors focus:outline-none">
+            — &nbsp;SEE MORE
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= APP BANNER SECTION ================= -->
+  <section class="relative w-full py-20 bg-cover bg-center overflow-hidden" style="background-image: url('images/app-bg.jpg');">
+    <div class="absolute inset-0 bg-[#29191a]/85"></div>
+    <div class="max-w-[1300px] mx-auto px-6 relative z-10 text-center text-white">
+      <span class="font-serif italic text-lg text-[#ba9d77] block mb-2">Download the App</span>
+      <h2 class="font-sans uppercase font-bold text-3xl sm:text-4xl tracking-widest mb-4">
+        WATCH, LISTEN, BELIEVE
+      </h2>
+      <p class="text-white/80 max-w-xl mx-auto text-sm leading-relaxed mb-8">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt labore. Stay connected with daily sermons, devotionals, and live stream worship.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="inline-flex items-center space-x-3 bg-white text-[#29191a] px-6 py-3 rounded-none text-xs font-semibold uppercase tracking-wider hover:bg-[#faf6f4] transition">
+          <i class="fa-brands fa-apple text-lg"></i>
+          <span>App Store</span>
+        </a>
+        <a href="#" class="inline-flex items-center space-x-3 bg-[#ba9d77] text-white px-6 py-3 rounded-none text-xs font-semibold uppercase tracking-wider hover:bg-[#a0835f] transition">
+          <i class="fa-brands fa-google-play text-base"></i>
+          <span>Google Play</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & MAP SECTION ================= -->
+  <section id="contact" class="w-full bg-white py-24 lg:py-32">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5 pr-0 lg:pr-8">
+          <span class="font-serif italic text-[17px] text-[#ba9d77] block mb-2">Where to find us</span>
+          <h2 class="font-sans uppercase font-bold text-2xl sm:text-3xl lg:text-[34px] tracking-[0.12em] text-[#29191a] mb-6">
+            CONTACT US
+          </h2>
+          <p class="text-[#8a8080] font-sans text-[15px] leading-[26px] mb-8">
+            Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+
+          <div class="space-y-3.5 text-[13px] text-[#847a7a]">
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-phone text-[#dbab9e] text-sm w-4 text-center"></i>
+              <a href="tel:+000123456789" class="hover:text-[#29191a] transition-colors">+000 123 456 789</a>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-location-dot text-[#dbab9e] text-sm w-4 text-center"></i>
+              <span>402 Park Ave S, NY 10016</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="fa-regular fa-envelope text-[#dbab9e] text-sm w-4 text-center"></i>
+              <a href="mailto:chapel@qodeinteractive.com" class="hover:text-[#29191a] transition-colors">chapel@qodeinteractive.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form id="mainContactForm" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" name="name" required placeholder="Name" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-5 py-3.5 text-[13px] text-[#29191a] placeholder-[#8a8080] outline-none transition">
+              <input type="email" name="email" required placeholder="E-mail" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-5 py-3.5 text-[13px] text-[#29191a] placeholder-[#8a8080] outline-none transition">
+            </div>
+            <div>
+              <input type="text" name="subject" placeholder="Subject" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-5 py-3.5 text-[13px] text-[#29191a] placeholder-[#8a8080] outline-none transition">
+            </div>
+            <div>
+              <textarea name="message" required placeholder="Message" rows="5" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-5 py-3.5 text-[13px] text-[#29191a] placeholder-[#8a8080] outline-none transition resize-none"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="bg-[#20201c] text-white text-xs font-semibold uppercase tracking-[0.2em] px-11 py-4 hover:bg-[#ba9d77] transition shadow-sm hover:shadow focus:outline-none">
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAP ================= -->
+  <section class="w-full overflow-hidden leading-none relative">
+    <img src="images/map-bg.jpg" alt="Locations Map" class="w-full h-auto max-h-[500px] object-cover block filter grayscale contrast-[105%]">
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="w-full bg-white pt-20 pb-8 text-[#8a8080]">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16">
+        <div>
+          <a href="#" class="inline-block mb-6">
+            <img src="images/footer-img.svg" alt="Chapel" class="h-10 w-auto object-contain">
+          </a>
+          <p class="text-sm leading-relaxed mb-6">
+            Welcome to Chapel, a modern theme for church and religion websites.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-phone text-[#dbab9e]"></i>
+              <a href="tel:+000123456789" class="hover:text-[#29191a] transition-colors">+000 123 456 789</a>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-location-dot text-[#dbab9e]"></i>
+              <span>402 Park Ave S, New York 10016</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-regular fa-envelope text-[#dbab9e]"></i>
+              <a href="mailto:chapel@qodeinteractive.com" class="hover:text-[#29191a] transition-colors">chapel@qodeinteractive.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-sans uppercase font-bold text-sm tracking-[0.16em] text-[#29191a] mb-6">CONTACT US</h4>
+          <form id="footerContactForm" class="space-y-3">
+            <input type="text" name="name" required placeholder="Name" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-4 py-2.5 text-xs text-[#29191a] placeholder-[#8a8080] outline-none transition">
+            <input type="email" name="email" required placeholder="E-mail" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-4 py-2.5 text-xs text-[#29191a] placeholder-[#8a8080] outline-none transition">
+            <textarea name="message" required placeholder="Message" rows="2" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-4 py-2.5 text-xs text-[#29191a] placeholder-[#8a8080] outline-none transition resize-none"></textarea>
+            <button type="submit" class="bg-[#20201c] text-white text-[11px] font-semibold uppercase tracking-[0.18em] px-7 py-3 hover:bg-[#ba9d77] transition shadow-sm focus:outline-none">
+              SEND
+            </button>
+          </form>
+        </div>
+
+        <div>
+          <h4 class="font-sans uppercase font-bold text-sm tracking-[0.16em] text-[#29191a] mb-6">UPCOMING EVENTS</h4>
+          <p class="text-sm">Sorry, no posts matched your criteria.</p>
+        </div>
+
+        <div>
+          <h4 class="font-sans uppercase font-bold text-sm tracking-[0.16em] text-[#29191a] mb-6">FOLLOW US</h4>
+          <div class="flex items-center space-x-4 text-sm text-[#29191a]">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#ba9d77] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#ba9d77] transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-[#ba9d77] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-stone-100 pt-8 text-center">
+        <p class="font-serif italic text-xs text-[#b7b2a5]">
+          © 2019 Qode Interactive, All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE / SIDE DRAWER ================= -->
+  <div id="sideDrawerBackdrop" class="fixed inset-0 bg-black/60 z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="sideDrawer" class="fixed top-0 right-0 h-full w-[320px] sm:w-[380px] bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between p-8 overflow-y-auto">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-stone-100 mb-8">
+        <img src="images/logo-dark.svg" alt="Chapel Theme" class="h-9 w-auto object-contain">
+        <button id="closeDrawerBtn" class="text-stone-400 hover:text-[#29191a] text-2xl transition-colors focus:outline-none" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col space-y-4 mb-8">
+        <span class="text-[11px] font-bold text-stone-400 uppercase tracking-widest mb-1">Navigation</span>
+        <a href="#" class="drawer-link text-sm font-semibold uppercase tracking-[0.15em] text-[#29191a] hover:text-[#ba9d77] transition-colors">Home</a>
+        <a href="#services" class="drawer-link text-sm font-semibold uppercase tracking-[0.15em] text-[#29191a] hover:text-[#ba9d77] transition-colors">Our Services</a>
+        <a href="#donation" class="drawer-link text-sm font-semibold uppercase tracking-[0.15em] text-[#29191a] hover:text-[#ba9d77] transition-colors">Donations</a>
+        <a href="#events" class="drawer-link text-sm font-semibold uppercase tracking-[0.15em] text-[#29191a] hover:text-[#ba9d77] transition-colors">Upcoming Events</a>
+        <a href="#blog" class="drawer-link text-sm font-semibold uppercase tracking-[0.15em] text-[#29191a] hover:text-[#ba9d77] transition-colors">Latest News</a>
+        <a href="#contact" class="drawer-link text-sm font-semibold uppercase tracking-[0.15em] text-[#29191a] hover:text-[#ba9d77] transition-colors">Contact Us</a>
+      </nav>
+
+      <div class="pt-6 border-t border-stone-100">
+        <h4 class="text-xs font-bold uppercase tracking-widest text-[#29191a] mb-3">About Chapel</h4>
+        <p class="text-xs text-[#8a8080] leading-relaxed mb-6">
+          Welcome to Chapel, a peaceful sanctuary for faith, worship, and community connection.
+        </p>
+        <div class="space-y-2.5 text-xs text-[#8a8080]">
+          <div class="flex items-center space-x-3"><i class="fa-solid fa-phone text-[#dbab9e] w-4"></i><span>+000 123 456 789</span></div>
+          <div class="flex items-center space-x-3"><i class="fa-solid fa-location-dot text-[#dbab9e] w-4"></i><span>402 Park Ave S, NY 10016</span></div>
+          <div class="flex items-center space-x-3"><i class="fa-regular fa-envelope text-[#dbab9e] w-4"></i><span>chapel@qodeinteractive.com</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-stone-100 flex items-center justify-between text-[#29191a]">
+      <span class="text-xs text-[#b7b2a5]">Follow us</span>
+      <div class="flex space-x-4 text-sm">
+        <a href="https://facebook.com" class="hover:text-[#ba9d77] transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://twitter.com" class="hover:text-[#ba9d77] transition"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://linkedin.com" class="hover:text-[#ba9d77] transition"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= SEARCH OVERLAY ================= -->
+  <div id="searchOverlay" class="fixed inset-0 bg-[#29191a]/95 backdrop-blur-sm z-50 flex items-center justify-center px-6 opacity-0 pointer-events-none transition-all duration-300">
+    <button id="closeSearchBtn" class="absolute top-8 right-8 text-white/70 hover:text-white text-3xl focus:outline-none transition" aria-label="Close search">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="w-full max-w-2xl">
+      <p class="font-serif italic text-lg text-[#ba9d77] mb-2 text-center">Search Chapel</p>
+      <form onsubmit="handleSearch(event)" class="relative">
+        <input type="text" id="searchInput" placeholder="Type words and hit enter..." class="w-full bg-transparent border-b-2 border-white/30 focus:border-[#ba9d77] py-4 text-2xl text-white placeholder-white/40 outline-none font-sans transition">
+        <button type="submit" class="absolute right-0 top-1/2 -translate-y-1/2 text-white/70 hover:text-[#ba9d77] text-2xl p-2 transition">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= VIDEO MODAL ================= -->
+  <div id="videoModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl">
+      <button onclick="closeVideoModal()" class="absolute -top-12 right-0 text-white/80 hover:text-white text-3xl focus:outline-none transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="relative pt-[56.25%] w-full bg-black">
+        <iframe id="videoIframe" class="absolute inset-0 w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= READ MORE / ARTICLE MODAL ================= -->
+  <div id="contentModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="contentModalCard" class="relative w-full max-w-3xl bg-white shadow-2xl rounded-none my-8 transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+      <button onclick="closeContentModal()" class="absolute top-5 right-5 z-20 w-9 h-9 bg-white/90 hover:bg-[#20201c] text-[#20201c] hover:text-white rounded-full flex items-center justify-center text-lg transition-colors shadow-sm focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="modalImageContainer" class="w-full h-64 sm:h-80 bg-stone-100 overflow-hidden relative">
+        <img id="modalImage" src="" alt="Post image" class="w-full h-full object-cover">
+        <div class="absolute bottom-4 left-6 bg-[#f8f4f2] text-[#29191a] text-xs font-semibold px-4 py-1.5 uppercase tracking-widest" id="modalDateBadge">
+          18.08.2019
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-10">
+        <div class="mb-3">
+          <span class="font-serif italic text-sm text-[#ba9d77]" id="modalCategory">Faith, Hope</span>
+          <span class="font-sans text-xs text-[#8a8080] ml-2" id="modalAuthor">by Walter Spencer</span>
+        </div>
+
+        <h3 class="font-sans uppercase font-bold text-2xl sm:text-3xl tracking-[0.08em] text-[#29191a] mb-6" id="modalTitle">
+          Post Title
+        </h3>
+
+        <div class="text-[#8a8080] font-sans text-sm sm:text-base leading-relaxed space-y-4" id="modalBody"></div>
+
+        <div class="mt-8 pt-6 border-t border-stone-100 flex items-center justify-between">
+          <div class="flex items-center space-x-3 text-xs text-[#29191a]">
+            <span class="text-stone-400">Share:</span>
+            <a href="#" class="hover:text-[#ba9d77] transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-[#ba9d77] transition"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:text-[#ba9d77] transition"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <button onclick="closeContentModal()" class="bg-[#20201c] text-white text-xs font-semibold uppercase tracking-[0.18em] px-6 py-2.5 hover:bg-[#ba9d77] transition">
+            CLOSE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DONATION MODAL ================= -->
+  <div id="donateModalBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="donateModalCard" class="relative w-full max-w-lg bg-white shadow-2xl p-6 sm:p-10 transform scale-95 opacity-0 transition-all duration-300 my-8">
+      <button onclick="closeDonateModal()" class="absolute top-5 right-5 text-stone-400 hover:text-[#20201c] text-2xl transition focus:outline-none" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <span class="font-serif italic text-[16px] text-[#ba9d77] block mb-1">Support Our Mission</span>
+      <h3 class="font-sans uppercase font-bold text-2xl tracking-[0.1em] text-[#29191a] mb-6">MAKE A DONATION</h3>
+
+      <form id="donationForm" onsubmit="handleDonationSubmit(event)" class="space-y-5">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-stone-600 mb-2.5">Select Amount (USD)</label>
+          <div class="grid grid-cols-4 gap-2.5">
+            <button type="button" onclick="selectAmount(10)" class="amt-btn border border-stone-200 hover:border-[#29191a] py-2.5 text-xs font-semibold text-[#29191a] transition focus:outline-none active">$10</button>
+            <button type="button" onclick="selectAmount(25)" class="amt-btn border border-stone-200 hover:border-[#29191a] py-2.5 text-xs font-semibold text-[#29191a] transition focus:outline-none bg-[#20201c] text-white">$25</button>
+            <button type="button" onclick="selectAmount(50)" class="amt-btn border border-stone-200 hover:border-[#29191a] py-2.5 text-xs font-semibold text-[#29191a] transition focus:outline-none">$50</button>
+            <button type="button" onclick="selectAmount(100)" class="amt-btn border border-stone-200 hover:border-[#29191a] py-2.5 text-xs font-semibold text-[#29191a] transition focus:outline-none">$100</button>
+          </div>
+          <div class="mt-3">
+            <input type="number" id="customAmount" placeholder="Custom amount ($)" min="1" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-4 py-2.5 text-xs text-[#29191a] outline-none transition">
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <input type="text" id="donorName" required placeholder="Full Name *" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-4 py-3 text-xs text-[#29191a] outline-none transition">
+          <input type="email" id="donorEmail" required placeholder="Email Address *" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-4 py-3 text-xs text-[#29191a] outline-none transition">
+          <textarea id="donorNote" rows="2" placeholder="Dedication or Note (Optional)" class="w-full bg-[#fcf8f6] border border-transparent focus:border-[#ba9d77] px-4 py-3 text-xs text-[#29191a] outline-none transition resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-[#20201c] hover:bg-[#ba9d77] text-white text-xs font-semibold uppercase tracking-[0.2em] py-4 transition shadow-md focus:outline-none">
+          CONFIRM DONATION
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 bg-[#20201c] text-white px-6 py-4 rounded-none shadow-2xl flex items-center space-x-3 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <i class="fa-solid fa-circle-check text-[#ba9d77] text-lg"></i>
+    <span id="toastMessage" class="text-xs font-sans tracking-wide">Thank you! Your message has been sent.</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    const ARTICLES_DATA = {
+      'hero': {
+        title: 'JOIN THE PRAYER & FLOCK',
+        subtitle: 'Church Theme & Welcome',
+        author: 'by Chapel Ministry',
+        date: 'Season 2026',
+        image: 'images/hero-bg.jpg',
+        body: `
+          <p>We welcome you to become an integral part of Chapel. Faith is nurtured through communal prayer, heartfelt devotion, and authentic fellowship with neighbors and believers across all walks of life.</p>
+          <p>Join our weekend worship gatherings, midweek Bible fellowships, or family service projects as we grow in faith together.</p>
+        `
+      },
+      'tour': {
+        title: 'TOUR THE CHAPEL',
+        subtitle: 'Heritage & Sacred Architecture',
+        author: 'Chapel Docents',
+        date: 'Every Saturday',
+        image: 'images/service-tour.jpg',
+        body: `
+          <p>Step through over a century of architectural beauty and spiritual sanctuary. Our guided chapel tours illuminate the history of our stained glass windows, stone carvings, and serene prayer gardens.</p>
+          <p>Tours are held every Saturday at 11:00 AM and 2:00 PM. Reservations are recommended for groups larger than ten.</p>
+        `
+      },
+      'weddings': {
+        title: 'CHAPEL WEDDINGS',
+        subtitle: 'Sacred Nuptials & Blessings',
+        author: 'Wedding Ministry',
+        date: 'Booking Available',
+        image: 'images/service-wedding.jpg',
+        body: `
+          <p>Celebrate your covenant of marriage in our sacred and historic sanctuary. Our pastoral staff and wedding coordinators assist couples through counseling and ceremony preparation.</p>
+          <p>Contact our events coordinator to schedule a consultation and tour the reception grounds.</p>
+        `
+      },
+      'events-service': {
+        title: 'SPECIAL EVENTS & GATHERINGS',
+        subtitle: 'Concerts & Feasts',
+        author: 'Ministry Team',
+        date: 'Monthly',
+        image: 'images/service-events.jpg',
+        body: `
+          <p>From sacred choral recitals and candlelight Christmas vigils to seasonal harvest festivals, Chapel brings our community together in joy and praise.</p>
+        `
+      },
+      'work': {
+        title: 'OUR WORK IN THE COMMUNITY',
+        subtitle: 'Outreach & Compassion',
+        author: 'Community Outreach',
+        date: 'Active Program',
+        image: 'images/our-work.jpg',
+        body: `
+          <p>Through our dedicated volunteer network, Chapel provides weekly food pantry support, youth tutoring, and elderly care visitations throughout the region.</p>
+        `
+      },
+      'sermon-1': {
+        title: 'HOLIDAY SPIRIT',
+        subtitle: 'Church · Holiday Series',
+        author: 'by Walter Spencer',
+        date: 'Sunday Sermon',
+        image: 'images/sermon-1.jpg',
+        body: `
+          <p>Pastor Walter Spencer explores how the true holiday spirit is found not in material exchange, but in humility, peace, and gracious hospitality towards the lonely.</p>
+        `
+      },
+      'sermon-2': {
+        title: 'LIVING IN FAITH',
+        subtitle: 'Faith · Spiritual Growth',
+        author: 'by Diane Foster',
+        date: 'Sunday Sermon',
+        image: 'images/sermon-2.jpg',
+        body: `
+          <p>Pastor Diane Foster speaks on walking faithfully through trials and uncertainties, finding peace anchored in divine promises.</p>
+        `
+      },
+      'sermon-3': {
+        title: 'GRACE & MERCY',
+        subtitle: 'Theology & Christian Life',
+        author: 'by Marcus Vance',
+        date: 'Sunday Sermon',
+        image: 'images/sermon-3.jpg',
+        body: `
+          <p>Youth Pastor Marcus Vance addresses how experiencing unconditional grace compels us to extend forgiveness and reconciliation to others.</p>
+        `
+      },
+      'blog-1': {
+        title: 'PRAY FOR PEACE',
+        subtitle: 'Faith, Hope',
+        author: 'by Walter Spencer',
+        date: '18.08.2019.',
+        image: 'images/blog-1.jpg',
+        body: `
+          <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.</p>
+        `
+      },
+      'blog-2': {
+        title: 'ALWAYS SAY PRAYER',
+        subtitle: 'Scripture, Daily',
+        author: 'by Diane Foster',
+        date: '14.08.2019.',
+        image: 'images/blog-2.jpg',
+        body: `
+          <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.</p>
+        `
+      },
+      'blog-3': {
+        title: 'FIND YOUR FAITH',
+        subtitle: 'Community, Life',
+        author: 'by Marcus Vance',
+        date: '10.08.2019.',
+        image: 'images/blog-3.jpg',
+        body: `
+          <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.</p>
+        `
+      }
+    };
+
+    // Mobile & Side Drawer
+    const burgerBtn = document.getElementById('burgerBtn');
+    const sideDrawer = document.getElementById('sideDrawer');
+    const sideDrawerBackdrop = document.getElementById('sideDrawerBackdrop');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function toggleSideDrawer(open) {
+      if (open) {
+        sideDrawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        sideDrawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        sideDrawer.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      }
+    }
+    burgerBtn.addEventListener('click', () => toggleSideDrawer(true));
+    closeDrawerBtn.addEventListener('click', () => toggleSideDrawer(false));
+    sideDrawerBackdrop.addEventListener('click', () => toggleSideDrawer(false));
+    drawerLinks.forEach(l => l.addEventListener('click', () => toggleSideDrawer(false)));
+
+    // Search Overlay
+    const searchBtn = document.getElementById('searchBtn');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const closeSearchBtn = document.getElementById('closeSearchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    function toggleSearch(open) {
+      if (open) {
+        searchOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        setTimeout(() => searchInput.focus(), 150);
+        document.body.style.overflow = 'hidden';
+      } else {
+        searchOverlay.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+    }
+    searchBtn.addEventListener('click', () => toggleSearch(true));
+    closeSearchBtn.addEventListener('click', () => toggleSearch(false));
+
+    function handleSearch(e) {
+      e.preventDefault();
+      const q = searchInput.value.trim();
+      if (q) {
+        toggleSearch(false);
+        showToast(`Searching for "${q}"...`);
+        searchInput.value = '';
+      }
+    }
+
+    // Video Modal
+    const videoModal = document.getElementById('videoModal');
+    const videoIframe = document.getElementById('videoIframe');
+    function openVideoModal() {
+      videoIframe.src = "https://player.vimeo.com/video/96728225?autoplay=1";
+      videoModal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVideoModal() {
+      videoIframe.src = "";
+      videoModal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+    videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideoModal(); });
+
+    // Article / Read More Modal
+    const contentModalBackdrop = document.getElementById('contentModalBackdrop');
+    const contentModalCard = document.getElementById('contentModalCard');
+    const modalImageContainer = document.getElementById('modalImageContainer');
+    const modalImage = document.getElementById('modalImage');
+    const modalDateBadge = document.getElementById('modalDateBadge');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+
+    function openModal(key) {
+      const data = ARTICLES_DATA[key];
+      if (!data) return;
+
+      if (data.image) {
+        modalImageContainer.classList.remove('hidden');
+        modalImage.src = data.image;
+        modalDateBadge.textContent = data.date;
+      } else {
+        modalImageContainer.classList.add('hidden');
+      }
+
+      modalCategory.textContent = data.subtitle;
+      modalAuthor.textContent = data.author;
+      modalTitle.textContent = data.title;
+      modalBody.innerHTML = data.body;
+
+      contentModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        contentModalCard.classList.remove('scale-95', 'opacity-0');
+        contentModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeContentModal() {
+      contentModalCard.classList.remove('scale-100', 'opacity-100');
+      contentModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        contentModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    contentModalBackdrop.addEventListener('click', (e) => { if (e.target === contentModalBackdrop) closeContentModal(); });
+
+    // Donation Modal
+    const donateModalBackdrop = document.getElementById('donateModalBackdrop');
+    const donateModalCard = document.getElementById('donateModalCard');
+    let currentDonationAmount = 25;
+
+    function openDonateModal() {
+      donateModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        donateModalCard.classList.remove('scale-95', 'opacity-0');
+        donateModalCard.classList.add('scale-100', 'opacity-100');
+      }, 50);
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDonateModal() {
+      donateModalCard.classList.remove('scale-100', 'opacity-100');
+      donateModalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        donateModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+    donateModalBackdrop.addEventListener('click', (e) => { if (e.target === donateModalBackdrop) closeDonateModal(); });
+
+    function selectAmount(val) {
+      currentDonationAmount = val;
+      document.getElementById('customAmount').value = '';
+      document.querySelectorAll('.amt-btn').forEach(btn => {
+        if (btn.textContent.includes(val)) {
+          btn.classList.add('bg-[#20201c]', 'text-white');
+        } else {
+          btn.classList.remove('bg-[#20201c]', 'text-white');
+        }
+      });
+    }
+
+    function handleDonationSubmit(e) {
+      e.preventDefault();
+      const custom = document.getElementById('customAmount').value;
+      const amt = custom ? custom : currentDonationAmount;
+      const donor = document.getElementById('donorName').value;
+      closeDonateModal();
+      showToast(`Bless you, ${donor}! Your donation of $${amt} was recorded.`);
+      document.getElementById('donationForm').reset();
+      selectAmount(25);
+    }
+
+    // Toast
+    const toastEl = document.getElementById('toastNotification');
+    const toastMsgEl = document.getElementById('toastMessage');
+    let toastTimeout;
+    function showToast(msg) {
+      clearTimeout(toastTimeout);
+      toastMsgEl.textContent = msg;
+      toastEl.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+
+    document.getElementById('mainContactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.target.reset();
+      showToast('Thank you! Your message has been sent successfully.');
+    });
+
+    document.getElementById('footerContactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      e.target.reset();
+      showToast('Thank you! Your message has been sent to Chapel.');
+    });
+
+    // Keyboard ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeContentModal();
+        closeDonateModal();
+        closeVideoModal();
+        toggleSideDrawer(false);
+        toggleSearch(false);
+      }
+    });
+  </script>
+
+</body>
+</html>
