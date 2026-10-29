@@ -87,40 +87,22 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="relative pt-20 pb-16 px-6 overflow-hidden">
-    <!-- Ambient glow orbs -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#c5a059]/10 blur-[120px] pointer-events-none rounded-full"></div>
-
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-      <div class="inline-flex items-center space-x-2 bg-[#c5a059]/10 border border-[#c5a059]/30 text-[#c5a059] text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-        <span>⭐ Premium HTML5 & Tailwind CSS Templates</span>
+  <!-- ================= CONTROL TOOLBAR (NO HERO BOX) ================= -->
+  <section class="max-w-7xl w-full mx-auto px-6 pt-8 pb-4">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 bg-[#181f25] border border-[#26313b] p-4 rounded-2xl">
+      <!-- Search Bar -->
+      <div class="relative w-full md:w-80">
+        <input type="text" id="searchInput" oninput="filterCards()" placeholder="Cari 13 template..." class="w-full bg-[#0b0f12] border border-[#26313b] text-xs text-white placeholder-stone-500 rounded-xl py-2.5 pl-10 pr-4 outline-none focus:border-[#c5a059] transition">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-stone-500 text-xs"></i>
       </div>
 
-      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] mb-6">
-        Koleksi 13 Template Landing Page Gereja & Faith-Based
-      </h1>
-
-      <p class="text-stone-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-        Koleksi landing page modern, berlisensi royalty-free, 100% responsif mobile-first, dilengkapi burger drawer, modal baca artikel lengkap, modal donasi interaktif, dan video player.
-      </p>
-
-      <!-- Category Filter Tabs & Search -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
-        <!-- Search bar -->
-        <div class="relative w-full sm:w-72">
-          <input type="text" id="searchInput" oninput="filterCards()" placeholder="Cari nama template..." class="w-full bg-[#181f25] border border-[#26313b] text-xs text-white placeholder-stone-500 rounded-full py-3 pl-10 pr-4 outline-none focus:border-[#c5a059] transition">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-stone-500 text-xs"></i>
-        </div>
-
-        <!-- Filter Select for Mobile / Pills for Desktop -->
-        <div class="flex flex-wrap justify-center gap-2" id="filterTabs">
-          <button onclick="setFilter('all', this)" class="filter-btn active bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2.5 rounded-full transition">Semua (13)</button>
-          <button onclick="setFilter('chapel', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Chapel</button>
-          <button onclick="setFilter('traditional', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Tradisional</button>
-          <button onclick="setFilter('festival', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Festival & Modern</button>
-          <button onclick="setFilter('accessible', this)" class="filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition">Inklusif & Aksi</button>
-        </div>
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-1.5 w-full md:w-auto" id="filterTabs">
+        <button onclick="setFilter('all', this)" class="filter-btn active bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-3.5 py-2 rounded-xl transition">Semua (13)</button>
+        <button onclick="setFilter('chapel', this)" class="filter-btn bg-[#0b0f12] hover:bg-stone-800 text-stone-300 text-xs font-bold px-3.5 py-2 rounded-xl transition border border-[#26313b]">Chapel</button>
+        <button onclick="setFilter('traditional', this)" class="filter-btn bg-[#0b0f12] hover:bg-stone-800 text-stone-300 text-xs font-bold px-3.5 py-2 rounded-xl transition border border-[#26313b]">Tradisional</button>
+        <button onclick="setFilter('festival', this)" class="filter-btn bg-[#0b0f12] hover:bg-stone-800 text-stone-300 text-xs font-bold px-3.5 py-2 rounded-xl transition border border-[#26313b]">Festival & Modern</button>
+        <button onclick="setFilter('accessible', this)" class="filter-btn bg-[#0b0f12] hover:bg-stone-800 text-stone-300 text-xs font-bold px-3.5 py-2 rounded-xl transition border border-[#26313b]">Inklusif & Aksi</button>
       </div>
     </div>
   </section>
@@ -776,9 +758,9 @@
   <script>
     function setFilter(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => {
-        b.className = 'filter-btn bg-[#181f25] hover:bg-stone-800 text-stone-300 text-xs font-bold px-4 py-2.5 rounded-full transition';
+        b.className = 'filter-btn bg-[#0b0f12] hover:bg-stone-800 text-stone-300 text-xs font-bold px-3.5 py-2 rounded-xl transition border border-[#26313b]';
       });
-      btn.className = 'filter-btn active bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-4 py-2.5 rounded-full transition';
+      btn.className = 'filter-btn active bg-[#c5a059] text-[#0b0f12] text-xs font-bold px-3.5 py-2 rounded-xl transition';
 
       const cards = document.querySelectorAll('.template-card');
       cards.forEach(card => {
