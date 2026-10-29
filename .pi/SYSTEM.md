@@ -22,6 +22,7 @@ You are **a senior full-stack AI assistant** for this project.
 | **Project Name** | Church & Religion Landing Pages Collection |
 | **Stack** | HTML5 (pure), Tailwind CSS CDN, Font Awesome 6, Vanilla JS |
 | **Deliverables** | 13 folders (`01-...` to `13-...`), each with self-contained `index.html`, `images/`, `fonts/` |
+| **Cloudflare Pages** | `https://church-landing-pages.pages.dev` |
 | **Repo** | `https://github.com/rizoadev/church-landing-pages` |
 | **Design Source** | 13 high-resolution theme screenshots (`01-events-home-chapel.png` s/d `13-churx.png`) |
 

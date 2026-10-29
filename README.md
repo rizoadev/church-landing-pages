@@ -4,6 +4,8 @@ A complete, pixel-crafted collection of **13 responsive landing pages** for chur
 
 Built with **pure HTML5 + Tailwind CSS (via CDN) + Font Awesome 6 + Vanilla JS**. No Node/build-step required—open any `index.html` file directly in any modern browser.
 
+🌐 **Live Showcase Gallery**: [https://church-landing-pages.pages.dev](https://church-landing-pages.pages.dev)
+
 ---
 
 ## 🏛️ Included Landing Pages
