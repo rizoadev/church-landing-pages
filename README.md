@@ -41,6 +41,17 @@ Built with **pure HTML5 + Tailwind CSS (via CDN) + Font Awesome 6 + Vanilla JS**
 
 ---
 
+## 🔒 Paywall Preview System (45 Detik)
+
+Setiap template landing page dilengkapi dengan modul proteksi pratinjau mandiri (`paywall.js`):
+- **Otomatis Aktif**: Setelah **45 detik**, layar akan terkunci dengan overlay blur elegan dan memunculkan pop-up kontak WhatsApp ke nomor **+62 878-8127-2246**.
+- **Peringatan 10 Detik**: Toast notifikasi halus muncul di detik ke-35 untuk mengingatkan pengunjung bahwa masa preview tersisa 10 detik.
+- **Mudah Dilepas Saat Klien Membeli**:
+  - **Opsi 1 (Instan tanpa edit HTML)**: Buka `paywall.js` di folder terkait, ganti `enabled: true` menjadi `enabled: false`.
+  - **Opsi 2 (Hapus Permanen)**: Hapus file `paywall.js` dan hapus baris `<script src="paywall.js"></script>` dari `index.html`.
+
+---
+
 ## 🚀 Getting Started
 
 Simply clone this repository and open any of the folders:

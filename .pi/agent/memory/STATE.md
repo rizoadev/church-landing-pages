@@ -6,6 +6,7 @@
 
 ## Quick Resume
 13 landing page berbasis HTML murni + Tailwind CSS CDN telah selesai dibangun secara lengkap dan mandiri di masing-masing 13 folder (`01-events-home-chapel` s/d `13-churx`). Semua gambar telah diganti menggunakan **Free Stock Photos resolusi tinggi** (Unsplash/open stock). Seluruh aturan project dipenuhi 100%: mobile-first responsive dengan slide-in burger drawer, tombol Read More/See More membuka modal berita interaktif, modal donasi, video modal, toast notification, tanpa icon shop.
+Selain itu, sistem **Paywall Preview 45 Detik** (`paywall.js`) dengan CTA WhatsApp **+62 878-8127-2246** telah aktif di seluruh folder dan dapat dilepas instan via config `enabled: false`.
 
 ## Completed Tasks
 | ID | Description | Agent | Folder | Status |
