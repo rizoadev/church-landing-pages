@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHURX – Church & Charity Donation</title>
+  <title>GKI Papua Jemaat Immanuel Kotaraja – Pelayanan Kasih & Diakonia Jayapura</title>
 
   <!-- Google Fonts: Plus Jakarta Sans, DM Serif Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@
 
   <!-- ================= TOP NOTICE BAR ================= -->
   <div class="w-full bg-[#0d1311] text-white text-[11px] font-semibold tracking-wider text-center py-2 px-4 border-b border-white/5">
-    NEW YEAR 2026 | CHURCHO | 1ST – 3RD JANUARY 2026
+    MISI KASIH DIAKONIA 2026 | GKI DI TANAH PAPUA JEMAAT IMMANUEL KOTARAJA
   </div>
 
   <!-- ================= HERO WITH NAVIGATION ================= -->
@@ -64,7 +64,7 @@
     <div class="max-w-[1360px] mx-auto px-6 h-24 flex items-center justify-between relative z-20">
       <a href="#" class="flex items-center space-x-2">
         <span class="text-2xl text-[#bbf451]"><i class="fa-solid fa-cross"></i></span>
-        <span class="font-sans font-extrabold text-2xl tracking-wider text-white">CHURX</span>
+        <span class="font-sans font-extrabold text-2xl tracking-wider text-white">GKI PAPUA KOTARAJA</span>
       </a>
 
       <!-- Pill Menu Desktop -->
@@ -83,7 +83,7 @@
           <span>LOGIN</span>
         </a>
         <button onclick="scrollToDonation()" class="bg-[#bbf451] hover:bg-[#9ed636] text-[#141c19] text-xs font-extrabold uppercase tracking-widest px-6 py-2.5 rounded-full transition shadow-md">
-          GIVE NOW →
+          SALURKAN KASIH →
         </button>
         <button id="burgerBtn" class="text-white hover:text-[#bbf451] p-1 focus:outline-none lg:hidden text-2xl" aria-label="Menu">
           <i class="fa-solid fa-bars"></i>
@@ -97,10 +97,10 @@
         <!-- Left copy -->
         <div class="lg:col-span-6 pr-0 lg:pr-6">
           <h1 class="font-serif text-5xl sm:text-6xl lg:text-[76px] font-normal leading-[1.05] tracking-tight mb-6">
-            Church / Charity
+            Gereja & Diakonia Kasih Papua
           </h1>
           <p class="text-base sm:text-lg text-white/90 mb-8 max-w-lg leading-relaxed">
-            Your contribution helps us continue this mission of hope, feeding urban families, and providing shelter to those in hardship.
+            Persembahan dan uluran tangan kasih Anda menyokong kelangsungan asrama pelajar pedalaman, paket gizi balita terpencil, dan beasiswa generasi muda Papua.
           </p>
           <div class="flex items-center space-x-4">
             <button onclick="openVideoModal()" class="w-12 h-12 rounded-full bg-white/20 hover:bg-white text-white hover:text-[#141c19] flex items-center justify-center text-sm transition" aria-label="Watch video">
@@ -113,8 +113,8 @@
         <!-- Right Lime Donation Card -->
         <div id="donate-section" class="lg:col-span-6 flex justify-center lg:justify-end">
           <div class="bg-[#bbf451] text-[#141c19] p-8 sm:p-10 rounded-3xl shadow-2xl max-w-md w-full">
-            <h3 class="font-serif text-3xl mb-1 text-[#141c19]">Donate Here</h3>
-            <p class="text-xs text-[#141c19]/80 mb-6">Your small support can make a big difference.</p>
+            <h3 class="font-serif text-3xl mb-1 text-[#141c19]">Salurkan Persembahan Kasih</h3>
+            <p class="text-xs text-[#141c19]/80 mb-6">Kebaikan kecil Anda menyalakan harapan besar di Tanah Papua.</p>
 
             <form onsubmit="handleHeroDonation(event)" class="space-y-4">
               <!-- Payment Type -->
@@ -123,7 +123,7 @@
                 <div class="flex items-center space-x-4 text-xs font-semibold">
                   <label class="flex items-center space-x-1.5 cursor-pointer">
                     <input type="radio" name="paymethod" checked class="text-[#141c19]">
-                    <span>Offline Donation</span>
+                    <span>Transfer Bank / QRIS</span>
                   </label>
                   <label class="flex items-center space-x-1.5 cursor-pointer">
                     <input type="radio" name="paymethod" class="text-[#141c19]">
@@ -140,14 +140,14 @@
               <div>
                 <span class="text-xs font-bold block mb-2">Your Donation</span>
                 <div class="grid grid-cols-4 gap-2 mb-3">
-                  <button type="button" onclick="setPresetAmt(5)" class="hero-amt-btn bg-[#141c19] text-white py-2 rounded-xl text-xs font-bold transition">$5.00</button>
-                  <button type="button" onclick="setPresetAmt(10)" class="hero-amt-btn bg-white/70 text-[#141c19] py-2 rounded-xl text-xs font-bold transition hover:bg-white">$10.00</button>
-                  <button type="button" onclick="setPresetAmt(15)" class="hero-amt-btn bg-white/70 text-[#141c19] py-2 rounded-xl text-xs font-bold transition hover:bg-white">$15.00</button>
-                  <button type="button" onclick="setPresetAmt(20)" class="hero-amt-btn bg-white/70 text-[#141c19] py-2 rounded-xl text-xs font-bold transition hover:bg-white">$20.00</button>
+                  <button type="button" onclick="setPresetAmt(50000)" class="hero-amt-btn bg-[#141c19] text-white py-2 rounded-xl text-xs font-bold transition">$5Rp 5Rp 10Rp 500.00000</button>
+                  <button type="button" onclick="setPresetAmt(100000)" class="hero-amt-btn bg-white/70 text-[#141c19] py-2 rounded-xl text-xs font-bold transition hover:bg-white">$10Rp 5Rp 10Rp 500.00000</button>
+                  <button type="button" onclick="setPresetAmt(250000)" class="hero-amt-btn bg-white/70 text-[#141c19] py-2 rounded-xl text-xs font-bold transition hover:bg-white">$15Rp 5Rp 10Rp 500.00000</button>
+                  <button type="button" onclick="setPresetAmt(500000)" class="hero-amt-btn bg-white/70 text-[#141c19] py-2 rounded-xl text-xs font-bold transition hover:bg-white">$20Rp 5Rp 10Rp 500.00000</button>
                 </div>
                 <div class="relative">
                   <span class="absolute left-3 top-2.5 text-xs font-bold text-stone-500">$</span>
-                  <input type="number" id="customHeroAmt" placeholder="Custom amount" min="1" class="w-full bg-white px-7 py-2 rounded-xl text-xs text-[#141c19] outline-none">
+                  <input type="number" id="customHeroAmt" placeholder="Jumlah donasi (Rp)" min="1" class="w-full bg-white px-7 py-2 rounded-xl text-xs text-[#141c19] outline-none">
                 </div>
               </div>
 
@@ -162,7 +162,7 @@
               </div>
 
               <button type="submit" class="w-full bg-[#e5b882] hover:bg-[#cfa26e] text-[#141c19] text-xs font-extrabold uppercase tracking-widest py-3.5 rounded-xl transition shadow mt-2">
-                DONATE NOW →
+                KONFIRMASI PERSEMBAHAN →
               </button>
             </form>
           </div>
@@ -175,10 +175,10 @@
   <section class="w-full bg-white py-24 lg:py-32">
     <div class="max-w-3xl mx-auto px-6 text-center">
       <h2 class="font-serif text-3xl sm:text-5xl text-[#141c19] mb-3 leading-snug">
-        Everyone is welcome at<br>Christian Orthodox Church!
+        Damai Sejahtera Kristus Bagi Seluruh Tanah Papua<br>GKI Immanuel Kotaraja
       </h2>
       <span class="text-sm font-bold text-[#207384] tracking-wider uppercase block mb-8">
-        The Big Church Festival 2025
+        Melayani dengan Tulus di Jantung Lembah Grime & Jayapura
       </span>
 
       <p class="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6">
@@ -189,7 +189,7 @@
       </p>
 
       <div class="font-serif italic text-2xl text-[#207384]">
-        Father Justin
+        Pdt. Andrikus Mofu, M.Th (Ketua Sinode GKI di Tanah Papua)
       </div>
     </div>
   </section>
@@ -197,7 +197,7 @@
   <!-- ================= LISTEN TO OUR SERMONS ================= -->
   <section id="sermons" class="w-full bg-stone-50 py-24 text-center">
     <div class="max-w-[1360px] mx-auto px-6">
-      <h2 class="font-serif text-4xl sm:text-5xl text-[#141c19] mb-2">Listen to Our Sermons</h2>
+      <h2 class="font-serif text-4xl sm:text-5xl text-[#141c19] mb-2">Renungan & Suara Gembala Papua</h2>
       <span class="text-sm font-bold text-[#207384] tracking-wider uppercase block mb-16">Powerful Messages of Faith Await!</span>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
@@ -205,9 +205,9 @@
           <div class="p-2 rounded-full border-2 border-[#bbf451] w-48 h-56 overflow-hidden mb-6">
             <img src="images/sermon-1.jpg" alt="Sermon" class="w-full h-full object-cover rounded-full">
           </div>
-          <span class="text-[11px] text-stone-400 uppercase tracking-widest block mb-2">Oct 21, 2026 · Jackson Nou</span>
+          <span class="text-[11px] text-stone-400 uppercase tracking-widest block mb-2">Warta Sinode GKI Papua</span>
           <h3 class="font-serif text-2xl text-[#141c19] mb-4 cursor-pointer hover:text-[#207384] transition" onclick="openModal('sermon-hardship')">
-            Hope Beyond Hardship: Trusting God's Plan
+            Kasih yang Memulihkan Tanah & Manusia Papua
           </h3>
           <button onclick="openVideoModal()" class="w-9 h-9 rounded-full bg-[#141c19] text-white flex items-center justify-center text-xs hover:bg-[#bbf451] hover:text-[#141c19] transition"><i class="fa-solid fa-play"></i></button>
         </div>
@@ -216,9 +216,9 @@
           <div class="p-2 rounded-full border-2 border-[#bbf451] w-48 h-56 overflow-hidden mb-6">
             <img src="images/sermon-2.jpg" alt="Sermon" class="w-full h-full object-cover rounded-full">
           </div>
-          <span class="text-[11px] text-stone-400 uppercase tracking-widest block mb-2">Oct 21, 2026 · Jackson Nou</span>
+          <span class="text-[11px] text-stone-400 uppercase tracking-widest block mb-2">Warta Sinode GKI Papua</span>
           <h3 class="font-serif text-2xl text-[#141c19] mb-4 cursor-pointer hover:text-[#207384] transition" onclick="openModal('sermon-prayers')">
-            Theology Of "Thoughts & Prayers"
+            Menjadi Sahabat Bagi Mereka yang Terpinggirkan
           </h3>
           <button onclick="openVideoModal()" class="w-9 h-9 rounded-full bg-[#141c19] text-white flex items-center justify-center text-xs hover:bg-[#bbf451] hover:text-[#141c19] transition"><i class="fa-solid fa-play"></i></button>
         </div>
@@ -227,9 +227,9 @@
           <div class="p-2 rounded-full border-2 border-[#bbf451] w-48 h-56 overflow-hidden mb-6">
             <img src="images/sermon-3.jpg" alt="Sermon" class="w-full h-full object-cover rounded-full">
           </div>
-          <span class="text-[11px] text-stone-400 uppercase tracking-widest block mb-2">Oct 21, 2026 · Jackson Nou</span>
+          <span class="text-[11px] text-stone-400 uppercase tracking-widest block mb-2">Warta Sinode GKI Papua</span>
           <h3 class="font-serif text-2xl text-[#141c19] mb-4 cursor-pointer hover:text-[#207384] transition" onclick="openModal('sermon-uncertainty')">
-            The Power of Prayer in Times of Uncertainty
+            Pengharapan Abadi Dalam Terang Injil
           </h3>
           <button onclick="openVideoModal()" class="w-9 h-9 rounded-full bg-[#141c19] text-white flex items-center justify-center text-xs hover:bg-[#bbf451] hover:text-[#141c19] transition"><i class="fa-solid fa-play"></i></button>
         </div>
@@ -242,10 +242,10 @@
     <div class="max-w-[1360px] mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16 border-b border-white/10">
         <div>
-          <span class="font-sans font-extrabold text-2xl tracking-wider text-white block mb-4">CHURX</span>
+          <span class="font-sans font-extrabold text-2xl tracking-wider text-white block mb-4">GKI PAPUA KOTARAJA</span>
           <p class="leading-relaxed mb-4 text-white/60">
-            23rd Avenue, 4th Street, Chicago, Illinois, USA<br>
-            Phone: +1 (234) 910-2222
+            Jl. Raya Abepura - Kotaraja, Wai Mhorock, Abepura, Kota Jayapura, Papua 99225<br>
+            Telepon: (0967) 581-234
           </p>
           <div class="flex space-x-3 text-sm text-white">
             <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#bbf451] hover:text-[#141c19] transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
@@ -281,7 +281,7 @@
       </div>
 
       <div class="pt-8 text-center text-white/40 text-[11px]">
-        CHURX © 2026. All rights reserved.
+        © 2026 GKI di Tanah Papua Jemaat Immanuel Kotaraja. Hak Cipta Dilindungi.
       </div>
     </div>
   </footer>
@@ -291,7 +291,7 @@
   <aside id="sideDrawer" class="fixed top-0 right-0 h-full w-[300px] sm:w-[360px] bg-[#141c19] text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between p-8 overflow-y-auto">
     <div>
       <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
-        <span class="font-sans font-extrabold text-2xl tracking-wider">CHURX</span>
+        <span class="font-sans font-extrabold text-2xl tracking-wider">GKI PAPUA KOTARAJA</span>
         <button id="closeDrawerBtn" class="text-white/60 hover:text-white text-2xl focus:outline-none" aria-label="Close menu">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -307,7 +307,7 @@
 
       <div class="pt-6 border-t border-white/10">
         <button onclick="toggleSideDrawer(false); scrollToDonation();" class="w-full bg-[#bbf451] hover:bg-[#9ed636] text-[#141c19] text-xs font-bold uppercase tracking-widest py-3 rounded-full transition shadow mb-6">
-          DONATE NOW →
+          KONFIRMASI PERSEMBAHAN →
         </button>
       </div>
     </div>
@@ -352,7 +352,7 @@
 
   <!-- ================= JAVASCRIPT ================= -->
   <script>
-    let activePreset = 5;
+    let activePreset = 50000;
 
     function setPresetAmt(val) {
       activePreset = val;
@@ -373,7 +373,7 @@
       const donor = document.getElementById('heroDonorName').value;
       showToast(`Bless you, ${donor}! Your contribution of $${amt} was recorded.`);
       e.target.reset();
-      setPresetAmt(5);
+      setPresetAmt(50000);
     }
 
     function scrollToDonation() {
@@ -386,15 +386,15 @@
         body: '<p>Log in with your community credentials to access charity donation history, receipts, and volunteer teams.</p>'
       },
       'sermon-hardship': {
-        title: "Hope Beyond Hardship: Trusting God's Plan",
+        title: "Kasih yang Memulihkan Tanah & Manusia Papua",
         body: '<p>Speaker Jackson Nou explores the promise of Romans 8:28, showing how God redeems life’s darkest trials into testimonies of resilience and service.</p>'
       },
       'sermon-prayers': {
-        title: 'Theology Of "Thoughts & Prayers"',
+        title: 'Menjadi Sahabat Bagi Mereka yang Terpinggirkan',
         body: '<p>Moving from passive sentiment to active, sacrificial intercession. How genuine prayer drives hands-on justice in our neighborhoods.</p>'
       },
       'sermon-uncertainty': {
-        title: 'The Power of Prayer in Times of Uncertainty',
+        title: 'Pengharapan Abadi Dalam Terang Injil',
         body: '<p>A practical message on developing consistent rhythms of prayer when life feels overwhelmed by societal upheaval.</p>'
       }
     };
